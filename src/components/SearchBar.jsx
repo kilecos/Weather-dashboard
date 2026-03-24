@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styles from './SearchBar.module.css'
 
+// Création du composant SearchBar qui va afficher la barre de recherche pour taper le nom d'une ville
 function SearchBar({onSearch}) {
     const [ville, setVille] = useState("")
 

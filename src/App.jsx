@@ -6,6 +6,7 @@ import Forecast from './components/Forecast'
 import { getCoordinates, getMeteo } from './services/weatherService'
 import styles from './App.module.css'
 
+// Création du composant App qui va afficher l'application complète à l'écran
 function App() {
   const [villeRecherchee, setVilleRecherchee] = useState("")
   const [meteo, setMeteo] = useState(null)

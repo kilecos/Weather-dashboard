@@ -3,13 +3,16 @@ const METEO_URL = "https://api.open-meteo.com/v1/forecast"
 
 // Etape 1 - Convertir le nom de ville en coordonnées
 export async function getCoordinates(ville) {
+    // On questionne l'API pour qu'elle fournisse les coordonnées de la ville recherchée
     const response = await fetch(
         `${GEO_URL}?name=${ville}&count=1&language=fr&format=json`
     )
     const data = await response.json()
 
     if (!data.results ||data.results.length === 0) {
+        // Si la ville n'existe pas
         throw new Error("Ville introuvable")
+        // throw interrompt l'exécution de la fonction et renvoie l'erreur au bloc catch de App.jsx
     }
 
     const {latitude, longitude, name, country} = data.results[0]
@@ -18,6 +21,7 @@ export async function getCoordinates(ville) {
 
 //Etape 2 - Récupérer la météo avec les coordonées
 export async function getMeteo(latitude, longitude) {
+    // On questionne l'API pour qu'elle fournisse les info météo de la ville ayant les coordonnées renseignées
     const response = await fetch(
         `${METEO_URL}?latitude=${latitude}&longitude=${longitude}`
         + `&current=temperature_2m,apparent_temperature,windspeed_10m,winddirection_10m,relativehumidity_2m,weathercode`
