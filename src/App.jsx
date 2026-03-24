@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
+import WeatherCard from './components/WeatherCard'
+import Forecast from './components/Forecast'
 import { getCoordinates, getMeteo } from './services/weatherService'
 import styles from './App.module.css'
 
@@ -10,6 +12,7 @@ function App() {
   const [localisation, setLocalisation] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [erreur, setErreur] = useState(null)
+  const [forecast, setForecast] = useState(null)
 
   function handleSearch(ville) {
     setVilleRecherchee(ville)
@@ -27,7 +30,8 @@ function App() {
         const coords = await getCoordinates(villeRecherchee)
         const donneesMeteo = await getMeteo(coords.latitude, coords.longitude)
         setLocalisation(coords)
-        setMeteo(donneesMeteo)
+        setMeteo(donneesMeteo.current)
+        setForecast(donneesMeteo.daily)
       } catch (error) {
         setErreur(error.message)
       } finally {
