@@ -1,0 +1,27 @@
+:root {
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #1a1a2e;
+  --bg-card: #16213e;
+  --accent: #4f8ef7;
+  --accent-hover: #3a7bd5;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --border: #2d3748;
+  --error: #fc8181;
+  --success: #68d391;
+  --border-radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import { getCoordinates, getMeteo } from './services/weatherService'
+import styles from './App.module.css'
 
 function App() {
   const [villeRecherchee, setVilleRecherchee] = useState("")
@@ -38,22 +39,22 @@ function App() {
   }, [villeRecherchee])
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Header
         title="Weather Dashboard"
         subtitle="Entrez une ville pour consulter la météo"
       />
-      <main className="main-content">
-        <SearchBar onSearch={handleSearch} />
-        {isLoading && <p>Chargment en cours...</p>}
-        {erreur && <p>Erreur : {erreur}</p>}
-        {meteo && (
-          <div>
-            <h2>{localisation.name}, {localisation.country}</h2>
-            <p>Température : {meteo.temperature_2m}°C</p>
-            <p>Vent : {meteo.windspeed_10m} km/h</p>
-          </div>
-        )}
+      <main className={styles.mainContent}>
+        <SearchBar onSearch={handleSearch}/>
+        <WeatherCard
+          meteo={meteo}
+          localisation={localisation}
+          isLoading={isLoading}
+          erreur={erreur}
+        />
+        <Forecast
+          forecast={forecast}
+        />
       </main>
     </div>
   )
