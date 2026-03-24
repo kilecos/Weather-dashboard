@@ -1,0 +1,92 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.loading {
+  color: var(--text-secondary);
+  padding: 20px 0;
+  font-size: 1rem;
+}
+
+.error {
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.location h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.location span {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 30px 0 10px;
+}
+
+.emoji {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detailLabel {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.detailValue {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+  .temperature {
+    font-size: 3rem;
+  }
+
+  .emoji {
+    font-size: 3rem;
+  }
+}
