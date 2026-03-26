@@ -13,9 +13,15 @@ function SearchBar({onSearch}) {
         onSearch(ville)
     }
 
+    function keySearch(e) {
+        if (e.key === "Enter") {
+            handleSubmit()
+        }
+    }
+
     return (
         <div className={styles.searchBar}>
-            <input 
+            <input onKeyDown={keySearch}
                 type="text"
                 placeholder="Rechercher une ville..."
                 value={ville}
