@@ -12,7 +12,13 @@ function Forecast({forecast}) {
             <div className={styles.grid}>
                 {forecast.time.map((date,index) => (
                     <div key={index} className={styles.day}>
-                        <span>{new Date(date).toLocaleDateString('fr-FR', { weekday: 'long' })}</span>
+                        {/* - "new Date(date)" convertit la chaine de caractère fournie par l'API en objet Date JavaScript
+                            - ".toLocale.dateString('fr-FR')" formate la date en français
+                            - "{weekday: 'long'}" affiche uniquement le jour de la semaine en entier */}
+                        {index === 0 
+                            ? <span> Aujourd'hui </span> 
+                            : <span>{new Date(date).toLocaleDateString('fr-FR', { weekday: 'long' })}</span>
+                        }
                         <span>{getWeatherInfo(forecast.weathercode[index]).emoji}</span>
                         <span>{forecast.temperature_2m_max[index]}</span>
                         <span>{forecast.temperature_2m_min[index]}</span>

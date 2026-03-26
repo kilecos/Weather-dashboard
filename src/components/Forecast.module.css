@@ -51,7 +51,6 @@
   color: var(--text-secondary);
 }
 
-/* Mobile first */
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
