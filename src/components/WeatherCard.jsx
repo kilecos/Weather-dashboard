@@ -45,6 +45,14 @@ function WeatherCard({meteo, localisation, isLoading, erreur}) {
                     <span className={styles.detailLabel}>💨 Vent</span>
                     <span className={styles.detailValue}>{meteo.windspeed_10m} km/h</span>
                 </div>
+                <div className={styles.detail}>
+                    <span className={styles.detailLabel}>🌡️ Température Ressentie</span>
+                    <span className={styles.detailValue}>{meteo.apparent_temperature}°C</span>
+                </div>
+                <div className={styles.detail}>
+                    <span className={styles.detailLabel}>💧 Humidité</span>
+                    <span className={styles.detailValue}>{meteo.relativehumidity_2m} %</span>
+                </div>
             </div>
         </div>
     )
