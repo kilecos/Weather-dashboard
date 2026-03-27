@@ -20,7 +20,7 @@
 }
 
 body {
-  background-image: url("../public/Ciel_couvert.webp");
+  background-image: url("/public/Ciel_couvert.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
