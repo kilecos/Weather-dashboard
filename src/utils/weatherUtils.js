@@ -2,6 +2,7 @@ export function getWeatherInfo(code) {
     // L'API Open-Meteo renvoi un nombre appelé weathercode correspondant à la météo
     // La fonction a donc le rôle de traducteur
     // Elle reçoit le code et elle retourne un objet avec emoji et description correspondant au code
+    // Elle reçoit également un background correspondant au code et à afficher sur l'app
     if (code === 0) return { emoji: "☀️", description: "Ciel dégagé", background: "/backgrounds/bg-clear.webp" }
     if (code <= 2) return { emoji: "⛅", description: "Partiellement nuageux", background: "/backgrounds/bg-cloudy.webp" }
     if (code === 3) return { emoji: "☁️", description: "Couvert", background: "/backgrounds/bg-cloudy.webp" }
