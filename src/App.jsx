@@ -5,6 +5,7 @@ import WeatherCard from './components/WeatherCard'
 import Forecast from './components/Forecast'
 import { getCoordinates, getMeteo } from './services/weatherService'
 import styles from './App.module.css'
+import { getWeatherInfo } from './utils/weatherUtils'
 
 // Création du composant App qui va afficher l'application complète à l'écran
 function App() {
@@ -44,23 +45,25 @@ function App() {
   }, [villeRecherchee])
 
   return (
-    <div className={styles.app}>
-      <Header
-        title="Weather Dashboard"
-        subtitle="Entrez une ville pour consulter la météo"
-      />
-      <main className={styles.mainContent}>
-        <SearchBar onSearch={handleSearch}/>
-        <WeatherCard
-          meteo={meteo}
-          localisation={localisation}
-          isLoading={isLoading}
-          erreur={erreur}
+    <div className={styles.appContainer} style={{backgroundImage: meteo ? `url('${getWeatherInfo(meteo?.weathercode).background}')` : 'none'}}>
+      <div className={styles.app}>
+        <Header
+          title="Weather Dashboard"
+          subtitle="Entrez une ville pour consulter la météo"
         />
-        <Forecast
-          forecast={forecast}
-        />
-      </main>
+        <main className={styles.mainContent}>
+          <SearchBar onSearch={handleSearch}/>
+          <WeatherCard
+            meteo={meteo}
+            localisation={localisation}
+            isLoading={isLoading}
+            erreur={erreur}
+          />
+          <Forecast
+            forecast={forecast}
+          />
+        </main>
+      </div>
     </div>
   )
 }

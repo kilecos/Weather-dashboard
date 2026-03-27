@@ -20,11 +20,7 @@
 }
 
 body {
-  background-image: url("/public/Ciel_couvert.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Segoe UI', system-ui, sans-serif;
   min-height: 100vh;
