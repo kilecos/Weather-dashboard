@@ -7,8 +7,9 @@
 .input {
   flex: 1;
   padding: 14px 18px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
+  background: var(--bg-card);
+  backdrop-filter: blur(5px);
+  border: 1px solid transparent;
   border-radius: var(--border-radius);
   color: var(--text-primary);
   font-size: 1rem;
