@@ -48,7 +48,7 @@ function App() {
     <div className={styles.appContainer} style={{backgroundImage: meteo ? `url('${getWeatherInfo(meteo?.weathercode).background}')` : 'none'}}>
       <div className={styles.app}>
         <Header
-          title="Weather Dashboard"
+          title="Météo en Direct"
           subtitle="Entrez une ville pour consulter la météo"
         />
         <main className={styles.mainContent}>
