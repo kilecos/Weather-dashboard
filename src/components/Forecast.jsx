@@ -10,6 +10,7 @@ function Forecast({forecast}) {
         <div className={styles.forecast}>
             <h3 className={styles.title}>Prévisions sur 7 jours</h3>
             <div className={styles.grid}>
+                {/* On parcours le tableau des dates pour générer un bloc d'affichage par jour (7 au total) */}
                 {forecast.time.map((date,index) => (
                     <div key={index} className={styles.day}>
                         {/* - "new Date(date)" convertit la chaine de caractère fournie par l'API en objet Date JavaScript
@@ -20,7 +21,9 @@ function Forecast({forecast}) {
                             : <span>{new Date(date).toLocaleDateString('fr-FR', { weekday: 'long' })}</span>
                         }
                         <span>{getWeatherInfo(forecast.weathercode[index]).emoji}</span>
+                        {/* Affiche la temparature maximale */}
                         <span>{forecast.temperature_2m_max[index]}</span>
+                        {/* Affiche la temparature minimale */}
                         <span>{forecast.temperature_2m_min[index]}</span>
                     </div>
                 ))}

@@ -1,3 +1,4 @@
+// Récupération des données météo via l'API Open-Meteo
 const GEO_URL = "https://geocoding-api.open-meteo.com/v1/search"
 const METEO_URL = "https://api.open-meteo.com/v1/forecast"
 
@@ -12,14 +13,14 @@ export async function getCoordinates(ville) {
     if (!data.results ||data.results.length === 0) {
         // Si la ville n'existe pas
         throw new Error("Ville introuvable")
-        // throw interrompt l'exécution de la fonction et renvoie l'erreur au bloc catch de App.jsx
+        // throw interrompt l'exécution de la fonction et renvoie l'erreur au bloc catch de App.jsx pour afficher le message d'erreur
     }
 
     const {latitude, longitude, name, country} = data.results[0]
     return {latitude, longitude, name, country}
 }
 
-//Etape 2 - Récupérer la météo avec les coordonées
+// Etape 2 - Récupérer la météo avec les coordonées
 export async function getMeteo(latitude, longitude) {
     // On questionne l'API pour qu'elle fournisse les info météo de la ville ayant les coordonnées renseignées
     const response = await fetch(

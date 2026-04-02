@@ -3,6 +3,7 @@ import { getWeatherInfo } from '../utils/weatherUtils'
 
 // Création du composant WeatherCard pour afficher la météo actuelle de la ville renseignée
 function WeatherCard({meteo, localisation, isLoading, erreur}) {
+    // Le message de chargement qui s'affiche lors de la recherche
     if (isLoading) {
         return (
             <div className={styles.card}>
@@ -13,6 +14,7 @@ function WeatherCard({meteo, localisation, isLoading, erreur}) {
         )
     }
 
+    // Le message d'erreur qui va s'afficher si la ville n'existe pas
     if (erreur) {
         return (
             <div className={`${styles.card} ${styles.error}`}>
@@ -24,6 +26,7 @@ function WeatherCard({meteo, localisation, isLoading, erreur}) {
     // Si la météo n'existe pas encore, rien n'est affiché
     if (!meteo) return null
 
+    // On récupère les données renvoyées par getWeatherInfo qui sert de traducteur au code renvoyé par l'API (voir weatherUtils.js)
     const {emoji, description} = getWeatherInfo(meteo.weathercode)
 
     return (
