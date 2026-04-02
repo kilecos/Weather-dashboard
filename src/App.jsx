@@ -6,6 +6,7 @@ import Forecast from './components/Forecast'
 import { getCoordinates, getMeteo } from './services/weatherService'
 import styles from './App.module.css'
 import { getWeatherInfo } from './utils/weatherUtils'
+import Footer from './components/Footer'
 
 // Création du composant App qui va afficher l'application complète à l'écran
 function App() {
@@ -15,6 +16,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [erreur, setErreur] = useState(null)
   const [forecast, setForecast] = useState(null)
+  const [lastUpdate, setLastUpdate] = useState(null)
 
   function handleSearch(ville) {
     setVilleRecherchee(ville)
@@ -34,6 +36,7 @@ function App() {
         setLocalisation(coords)
         setMeteo(donneesMeteo.current)
         setForecast(donneesMeteo.daily)
+        setLastUpdate(new Date())
       } catch (error) {
         setErreur(error.message)
       } finally {
@@ -63,6 +66,11 @@ function App() {
             forecast={forecast}
           />
         </main>
+        <Footer
+          copy="© 2026, Kilian Lecossois"
+          link="Lien vers le projet"
+          lastUpdate={lastUpdate}
+        />
       </div>
     </div>
   )

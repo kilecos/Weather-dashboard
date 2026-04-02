@@ -1,0 +1,22 @@
+.footerContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-primary);
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+    
+    .footerContainer {
+        font-size: 12px;
+    }
+}
