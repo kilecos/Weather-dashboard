@@ -34,6 +34,7 @@ function App() {
       setIsLoading(true) // On afficher le message de chargement pendant la recherche
       setErreur(null)
       setMeteo(null)
+      setForecast(null)
 
       try {
         // On récupère les coordonnées de la ville recherchée
