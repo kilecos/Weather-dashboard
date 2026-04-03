@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, version } from 'react'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import WeatherCard from './components/WeatherCard'
@@ -82,8 +82,6 @@ function App() {
         </main>
         {/* Voir Footer.jsx */}
         <Footer
-          copy="© 2026, Kilian Lecossois"
-          link="Lien vers le projet"
           lastUpdate={lastUpdate}
         />
       </div>

@@ -14,6 +14,10 @@ a {
     color: var(--text-primary);
 }
 
+.updateContainer {
+    text-align: end;
+}
+
 @media (max-width: 600px) {
     
     .footerContainer {
