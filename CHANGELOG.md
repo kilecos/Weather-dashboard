@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.2.0] - 2026-04-03
+### Ajouté
+- Ajout fonctionnalité de reset de l'application par click sur le Header
+
 ## [v1.1.4] - 2026-04-03
 ### Modifié
 - Modification du fichier README.md

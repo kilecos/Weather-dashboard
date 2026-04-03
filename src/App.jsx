@@ -3,10 +3,10 @@ import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import WeatherCard from './components/WeatherCard'
 import Forecast from './components/Forecast'
+import Footer from './components/Footer'
 import { getCoordinates, getMeteo } from './services/weatherService'
 import styles from './App.module.css'
 import { getWeatherInfo } from './utils/weatherUtils'
-import Footer from './components/Footer'
 
 // Création du composant App qui va afficher l'application complète à l'écran
 function App() {
@@ -55,13 +55,23 @@ function App() {
     fetchData()
   }, [villeRecherchee])
 
+  function resetApp() {
+    setVilleRecherchee("")
+    setMeteo(null)
+    setLocalisation(null)
+    setForecast(null)
+    setIsLoading(null)
+    setErreur(null)
+    setLastUpdate(null)
+  }
+
   return (
     // Le conteneur principal change d'image de fond dynamiquement en fontion de la météo. Si aucune météo, pas de background
     // On affiche ensuite les différents composants de l'application en le passant en prop les state établis en amont (meteo, localisation, forecast,...)
     <div className={styles.appContainer} style={{backgroundImage: meteo ? `url('${getWeatherInfo(meteo?.weathercode).background}')` : 'none'}}>
       <div className={styles.app}>
         {/* Voir Header.jsx */}
-        <Header
+        <Header onReset={resetApp}
           title="Météo en Direct"
           subtitle="Entrez une ville pour consulter la météo"
         />
