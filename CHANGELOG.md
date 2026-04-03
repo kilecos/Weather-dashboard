@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.1.4] - 2026-04-03
+### Modifié
+- Modification du fichier README.md
+
 ## [v1.1.3] - 2026-04-03
 ### Ajouté
 - Ajout du fichier CHANGELOG.md

@@ -1,16 +1,33 @@
-# React + Vite
+# 🌤 Weather Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une application web qui permet d'afficher la météo pour la ville voulue.
+L'utilisateur tape le nom de la ville dont il veut connaitre la météo dans la barre de recherche et l'application et l'appli lui affiche la météo actuelle ainsi que les prévisions pour les 7 prochains jours.
+Réalisées en HTML, CSS et JavaScript (React)
 
-Currently, two official plugins are available:
+![Aperçu de l'appli](/public/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Fonctionnalités :
 
-## React Compiler
+- 🔍 Recherche d'une ville via la barre de recherche (bouton ou touche Entrée)
+- 🌡️ Affichage des conditions météo actuelles : température, température ressentie, humidité et vitesse du vent
+- 📅 Prévisions sur 7 jours avec météo, températures maximale et minimale
+- 🖼️ Image de fond dynamique qui s'adapte aux conditions météo actuelles
+- 🕐 Heure de dernière mise à jour des données
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies :
 
-## Expanding the ESLint configuration
+- HTML5 / CSS3
+- JavaScript / React
+- Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Démo en ligne :
+
+👉 [Tester l'appli](https://kilecos.github.io/Weather-dashboard/)
+
+## Lancer en local :
+
+1. Cloner le dépôt
+2. Ouvrir dans VS Code
+3. Lancer avec les commandes suivantes :
+   - npm install
+   - npm run dev
