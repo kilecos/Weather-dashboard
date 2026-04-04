@@ -77,7 +77,7 @@ function App() {
         />
         <main className={styles.mainContent}>
           {/* Voir SearchBar.jsx */}
-          <SearchBar onSearch={handleSearch}/>
+          <SearchBar onSearch={handleSearch} villeRecherchee={villeRecherchee}/>
           {/* Voir WeatherCard.jsx */}
           <WeatherCard
             meteo={meteo}

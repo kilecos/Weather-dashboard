@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.2.1] - 2026-04-04
+### Corrigé
+- Correction pour vidage de la barre de recherche lors du reset par click sur le header
+
 ## [v1.2.0] - 2026-04-03
 ### Ajouté
 - Ajout fonctionnalité de reset de l'application par click sur le Header
