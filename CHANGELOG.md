@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.2.2] - 2026-04-07
+### Ajouté
+- Ajout d'un GIF en tant que skeleton loader lors de la recherche
+
 ## [v1.2.1] - 2026-04-04
 ### Corrigé
 - Correction pour vidage de la barre de recherche lors du reset par click sur le header

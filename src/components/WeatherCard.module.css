@@ -9,9 +9,15 @@
 }
 
 .loading {
+  margin: 0 auto;
+  text-align: center;
   color: var(--text-secondary);
   padding: 20px 0;
   font-size: 1rem;
+}
+
+.loading img {
+  border-radius: var(--border-radius);
 }
 
 .error {

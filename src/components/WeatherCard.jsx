@@ -6,11 +6,10 @@ function WeatherCard({meteo, localisation, isLoading, erreur}) {
     // Le message de chargement qui s'affiche lors de la recherche
     if (isLoading) {
         return (
-            <div className={styles.card}>
-                <div className={styles.loading}>
-                    <p>Chargement en cours...</p>
-                </div>
-            </div>
+            <div className={styles.loading}>
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW5kbTc2aTYweHVtOXl6NmhicjF3eWRwempxbWcwZzY4Ym5xNmV3OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QRhtqYeEywJI4/giphy.gif" alt="GIF de chargement météo"/>
+                <p>Chargement en cours...</p>
+            </div>    
         )
     }
 
