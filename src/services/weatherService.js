@@ -27,12 +27,14 @@ export async function getMeteo(latitude, longitude) {
         `${METEO_URL}?latitude=${latitude}&longitude=${longitude}`
         + `&current=temperature_2m,apparent_temperature,windspeed_10m,winddirection_10m,relativehumidity_2m,weathercode`
         + `&daily=temperature_2m_max,temperature_2m_min,weathercode`
+        + `&hourly=weathercode,temperature_2m`
         + `&timezone=auto`
     )
     const data = await response.json()
     return {
         // On retourne un objet avec deux types de données : les données actuelles et les prévisions sur 7 jours
         current: data.current,
-        daily: data.daily
+        daily: data.daily,
+        hourly: data.hourly
     }
 }

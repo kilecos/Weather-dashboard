@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import { getCoordinates, getMeteo } from './services/weatherService'
 import styles from './App.module.css'
 import { getWeatherInfo } from './utils/weatherUtils'
+import HourlyForecast from './components/HourlyForecast'
 
 // Création du composant App qui va afficher l'application complète à l'écran
 function App() {
@@ -15,6 +16,7 @@ function App() {
   const [meteo, setMeteo] = useState(null)                    // Données météo actuelles
   const [localisation, setLocalisation] = useState(null)      // Infos de géocodage (nom exact, pays)
   const [forecast, setForecast] = useState(null)              // Prévisions sur 7 jours
+  const [hourlyForecast, setHourlyForecast] = useState(null)
 
   // --- State d'interface (UI) ---
   const [isLoading, setIsLoading] = useState(false)           // Etat du chargement
@@ -35,6 +37,7 @@ function App() {
       setErreur(null)
       setMeteo(null)
       setForecast(null)
+      setHourlyForecast(null)
 
       try {
         // On récupère les coordonnées de la ville recherchée
@@ -44,6 +47,7 @@ function App() {
         setLocalisation(coords)
         setMeteo(donneesMeteo.current)
         setForecast(donneesMeteo.daily)
+        setHourlyForecast(donneesMeteo.hourly)
         setLastUpdate(new Date())
       } catch (error) {
         setErreur(error.message)
@@ -60,6 +64,7 @@ function App() {
     setMeteo(null)
     setLocalisation(null)
     setForecast(null)
+    setHourlyForecast(null)
     setIsLoading(null)
     setErreur(null)
     setLastUpdate(null)
@@ -84,6 +89,9 @@ function App() {
             localisation={localisation}
             isLoading={isLoading}
             erreur={erreur}
+          />
+          <HourlyForecast
+            hourlyForecast={hourlyForecast}
           />
           {/* Voir Forecast.jsx */}
           <Forecast

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.3.0] - 2026-04-07
+### Ajouté
+- Ajout du module affichant les prévisions sur 24h à partir de l'heure de la recherche + 1
+
 ## [v1.2.2] - 2026-04-07
 ### Ajouté
 - Ajout d'un GIF en tant que skeleton loader lors de la recherche
