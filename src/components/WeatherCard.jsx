@@ -37,7 +37,7 @@ function WeatherCard({meteo, localisation, isLoading, erreur}) {
 
             <div className={styles.main}>
                 <span className={styles.emoji}>{emoji}</span>
-                <span className={styles.temperature}>{meteo.temperature_2m}°C</span>
+                <span className={styles.temperature}>{meteo.temperature_2m}°</span>
             </div>
 
             <p className={styles.description}>{description}</p>
@@ -49,7 +49,7 @@ function WeatherCard({meteo, localisation, isLoading, erreur}) {
                 </div>
                 <div className={styles.detail}>
                     <span className={styles.detailLabel}>🌡️ Température Ressentie</span>
-                    <span className={styles.detailValue}>{meteo.apparent_temperature}°C</span>
+                    <span className={styles.detailValue}>{meteo.apparent_temperature}°</span>
                 </div>
                 <div className={styles.detail}>
                     <span className={styles.detailLabel}>💧 Humidité</span>

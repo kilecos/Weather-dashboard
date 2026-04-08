@@ -1,7 +1,7 @@
 # 🌤 Weather Dashboard
 
 Une application web qui permet d'afficher la météo pour la ville voulue.
-L'utilisateur tape le nom de la ville dont il veut connaitre la météo dans la barre de recherche et l'application et l'appli lui affiche la météo actuelle ainsi que les prévisions pour les 7 prochains jours.
+L'utilisateur tape le nom de la ville dont il veut connaitre la météo dans la barre de recherche et l'application et l'appli lui affiche la météo actuelle, les prévisions sur 24h ainsi que les prévisions pour les 7 prochains jours.
 Réalisées en HTML, CSS et JavaScript (React)
 
 ![Aperçu de l'appli](/public/preview.png)
@@ -10,6 +10,7 @@ Réalisées en HTML, CSS et JavaScript (React)
 
 - 🔍 Recherche d'une ville via la barre de recherche (bouton ou touche Entrée)
 - 🌡️ Affichage des conditions météo actuelles : température, température ressentie, humidité et vitesse du vent
+- ⌚ Prévisions sur 24h avec météo et températures
 - 📅 Prévisions sur 7 jours avec météo, températures maximale et minimale
 - 🖼️ Image de fond dynamique qui s'adapte aux conditions météo actuelles
 - 🕐 Heure de dernière mise à jour des données

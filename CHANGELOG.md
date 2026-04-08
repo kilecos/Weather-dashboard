@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [v1.3.2] - 2026-04-08
+### Modifié
+- Modifications affichage des températures sur l'appli
+- Modification de README.md par mise à jour de l'image de préview + ajout des prévisions sur 24h
+
 ## [v1.3.1] - 2026-04-08
 ### Ajouté
 - Ajout du scroll horizontal à la molette de souris sur le bloc des prévisions sur 24h

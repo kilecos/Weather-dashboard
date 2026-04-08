@@ -21,11 +21,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   padding: 12px 8px;
   background: transparent;
   border: none;
   text-align: center;
+}
+
+.hours span:last-child {
+  font-weight: 700;
 }
 
 .hour {

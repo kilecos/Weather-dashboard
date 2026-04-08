@@ -22,9 +22,9 @@ function Forecast({forecast}) {
                         }
                         <span>{getWeatherInfo(forecast.weathercode[index]).emoji}</span>
                         {/* Affiche la temparature maximale */}
-                        <span>{forecast.temperature_2m_max[index]}</span>
+                        <span>{forecast.temperature_2m_max[index]}°</span>
                         {/* Affiche la temparature minimale */}
-                        <span>{forecast.temperature_2m_min[index]}</span>
+                        <span>{forecast.temperature_2m_min[index]}°</span>
                     </div>
                 ))}
             </div>
