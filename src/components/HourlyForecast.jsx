@@ -1,8 +1,41 @@
+import { useRef, useEffect } from 'react'
 import styles from './HourlyForecast.module.css'
 import { getWeatherInfo } from '../utils/weatherUtils'
 
 function HourlyForecast({hourlyForecast}) {
+    // Si aucune prévisions, rien ne s'affiche
     if (!hourlyForecast) return null
+
+    // Création d'une référence (Ref) : un "post-it" collé sur l'élément HTML
+    // Va permettre de manipuler le défilement sans passer par un state
+    const scrollRef = useRef(null)
+
+    useEffect(() => {
+        // el (élément) représente le conteneur HTML réel désigné par Ref
+        const el = scrollRef.current
+        if (el) {
+            
+            // La fonction qui intercepte le mouvement de la molette de la souris
+            // définie avec const sous la forme d'une arrow function
+            const handleWheel = (e) => {
+                // e.deltaY est le mouvement vertical de la molette, si 0 on ne fait rien
+                if (e.deltaY === 0) return
+                
+                // On empêche la page de bouger verticalement lors du scroll
+                e.preventDefault() 
+                
+                // On converti le mouvement vertical (deltaY) en mouvement horizontal (scrollLeft)
+                el.scrollLeft += e.deltaY
+            }
+
+            // On attache manuelle l'évènement
+            // {passive: false} en obligatoire pour que e.preventDefault() fonctionne
+            el.addEventListener('wheel', handleWheel, { passive: false })
+            
+            // On retire l'écouteur d'évènement si le composant est retiré ou mis à jour
+            return () => el.removeEventListener('wheel', handleWheel)
+        }
+    }, [hourlyForecast]) // On relance si les données changent
 
     // 1. On défini la "prochaine heure pile" qui sera le point de départ du tableau à afficher
     const nextHour = new Date()
@@ -22,7 +55,7 @@ function HourlyForecast({hourlyForecast}) {
 
     return (
         <div className={styles.hourlyForecast}>
-            <div className={styles.grid}>
+            <div className={styles.grid} ref={scrollRef}>
                 {/* On parcours le tableau des dates pour générer un bloc d'affichage par heure (24h au total) */}
                 {hours24.map((hour,index) => (
                     <div key={index} className={styles.hours}>
@@ -31,7 +64,6 @@ function HourlyForecast({hourlyForecast}) {
                         - "{hour: '2-digit', minute: '2-digit'}" pour affichage en format "heure : minute" */}
                         <span className={styles.hour}>{new Date(hour).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}</span>
                         <span className={styles.emoji}>{getWeatherInfo(codes24[index]).emoji}</span>
-                        {/* Affiche la temparature */}
                         <span>{temps24[index]}°</span>
                     </div>
                 ))}

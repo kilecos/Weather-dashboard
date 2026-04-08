@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.3.1] - 2026-04-08
+### Ajouté
+- Ajout du scroll horizontal à la molette de souris sur le bloc des prévisions sur 24h
+
 ## [v1.3.0] - 2026-04-07
 ### Ajouté
 - Ajout du module affichant les prévisions sur 24h à partir de l'heure de la recherche + 1
