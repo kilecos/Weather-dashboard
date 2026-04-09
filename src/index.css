@@ -19,13 +19,6 @@
   box-sizing: border-box;
 }
 
-/* On empêche la page entière de défiler */
-html, body {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-}
-
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);

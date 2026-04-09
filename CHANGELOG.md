@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.3.8] -2026-04-09
+### Corrigé
+- Remise en place du pull-to-refresh sur mobile
+
 ## [v1.3.7] - 2026-04-09
 ### Corrigé
 - Correction de l'effet de rebond de l'image de fond sur mobile
