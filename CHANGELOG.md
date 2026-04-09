@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [v1.3.5] - 2026-04-09
+### Modifié
+- Modifications pour le rendu visuel sur mobile :
+    - retrait du zoom sur le background pour qu'il garde une bonne qualité d'affichage
+    - modification de la taille du titre
+    - remplacement du display grid par flex pour affichage du Forecast sur mobile => garde l'affichage en une seule ligne avec possibilité de scroll horizontal
+
 ## [v1.3.4] - 2026-04-09
 ### Ajouté
 - Reset du contenu de la barre de recherche après recherche d'une ville
