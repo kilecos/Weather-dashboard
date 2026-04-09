@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.3.7] - 2026-04-09
+### Corrigé
+- Correction de l'effet de rebond de l'image de fond sur mobile
+
 ## [v1.3.6] - 2026-04-09
 ### Corrigé
 - Correction de l'affichage des images de fond pour mobile

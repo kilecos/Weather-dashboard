@@ -75,6 +75,8 @@ function App() {
     // Le conteneur principal change d'image de fond dynamiquement en fontion de la météo. Si aucune météo, pas de background
     // On affiche ensuite les différents composants de l'application en le passant en prop les state établis en amont (meteo, localisation, forecast,...)
     <div className={styles.appContainer}>
+      {/* Pour afficher une image de fond en fonction de la météo
+      Voir App.module.css pour les réglages de cette image */}
       <div className={styles.backgroundLayer} style={{backgroundImage: meteo ? `url('${getWeatherInfo(meteo?.weathercode).background}')` : 'none'}}/>
       <div className={styles.app}>
         {/* Voir Header.jsx */}
