@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.3.3] - 2026-04-08
+### Modifié
+- Changement de l'emoji renvoyé pour la météo "Averses"
+
 ## [v1.3.2] - 2026-04-08
 ### Modifié
 - Modifications affichage des températures sur l'appli
