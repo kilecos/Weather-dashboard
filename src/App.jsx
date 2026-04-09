@@ -53,6 +53,7 @@ function App() {
         setErreur(error.message)
       } finally {
         setIsLoading(false)
+        setVilleRecherchee("") // On vide la barre de recherche
       }
     }
 

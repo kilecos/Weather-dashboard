@@ -1,6 +1,12 @@
 # CHANGELOG
 
-## [v1.3.3] - 2026-04-08
+## [v1.3.4] - 2026-04-09
+### Ajouté
+- Reset du contenu de la barre de recherche après recherche d'une ville
+### Modifié
+- Ajustement visuels pour affichage du skeleton loader format Desktop et Mobile
+
+## [v1.3.3] - 2026-04-09
 ### Modifié
 - Changement de l'emoji renvoyé pour la météo "Averses"
 
