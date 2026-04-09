@@ -16,7 +16,7 @@ function App() {
   const [meteo, setMeteo] = useState(null)                    // Données météo actuelles
   const [localisation, setLocalisation] = useState(null)      // Infos de géocodage (nom exact, pays)
   const [forecast, setForecast] = useState(null)              // Prévisions sur 7 jours
-  const [hourlyForecast, setHourlyForecast] = useState(null)
+  const [hourlyForecast, setHourlyForecast] = useState(null)  // Prévisions sur 24h
 
   // --- State d'interface (UI) ---
   const [isLoading, setIsLoading] = useState(false)           // Etat du chargement
