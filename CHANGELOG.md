@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.3.6] - 2026-04-09
+### Corrigé
+- Correction de l'affichage des images de fond pour mobile
+
 ## [v1.3.5] - 2026-04-09
 ### Modifié
 - Modifications pour le rendu visuel sur mobile :
