@@ -52,8 +52,12 @@ function WeatherCard({meteo, localisation, isLoading, erreur}) {
                     <span className={styles.detailValue}>{meteo.apparent_temperature}°</span>
                 </div>
                 <div className={styles.detail}>
-                    <span className={styles.detailLabel}>💧 Humidité</span>
+                    <span className={styles.detailLabel}>💦 Humidité</span>
                     <span className={styles.detailValue}>{meteo.relativehumidity_2m} %</span>
+                </div>
+                <div className={styles.detail}>
+                    <span className={styles.detailLabel}>💧 Précipitations</span>
+                    <span className={styles.detailValue}>{meteo.precipitation_probability} %</span>
                 </div>
             </div>
         </div>

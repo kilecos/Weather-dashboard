@@ -47,6 +47,11 @@
   color: var(--text-primary);
 }
 
+.day span:nth-child(4) {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
 .day span:last-child {
   font-size: 0.8rem;
   color: var(--text-secondary);

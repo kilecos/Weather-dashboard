@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.4.0] - 2026-04-10
+## Ajouté
+- Ajout de l'affichage des probabilités de précipitations sur WeatherCard, Forecast et HourlyForecast
+### Modifié
+- Modification de l'aspect des scrollbars
+
 ## [v1.3.9] - 2026-04-10
 ### Ajouté
 - Ajout d'un effet de flou aux bordures gauches et droites des deux blocs de prévisions (24h et 7jours) avec mask-image pour coupure visuelle moins nette lors du scroll

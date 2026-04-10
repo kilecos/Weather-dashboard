@@ -25,7 +25,6 @@
  */
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-
 }
 
 .hours {
@@ -37,10 +36,16 @@
   background: transparent;
   border: none;
   text-align: center;
+  flex: 0 0 70px;
+}
+
+.hours span:nth-child(3) {
+  font-weight: 700;
 }
 
 .hours span:last-child {
-  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
 }
 
 .hour {

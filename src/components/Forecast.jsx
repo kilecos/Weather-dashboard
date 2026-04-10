@@ -25,6 +25,8 @@ function Forecast({forecast}) {
                         <span>{forecast.temperature_2m_max[index]}°</span>
                         {/* Affiche la temparature minimale */}
                         <span>{forecast.temperature_2m_min[index]}°</span>
+                        {/* Affiche la probabilité de précipitation */}
+                        <span>💧{forecast.precipitation_probability_mean[index]}%</span>
                     </div>
                 ))}
             </div>

@@ -51,7 +51,8 @@ function HourlyForecast({hourlyForecast}) {
     // 3. On découpe les tableaux de données pour n'avoir que celles correspondant au 24 prochaines heures
     const hours24 = hourlyForecast.time.slice(debut, debut + 24)
     const temps24 = hourlyForecast.temperature_2m.slice(debut, debut + 24)
-    const codes24 = hourlyForecast.weathercode.slice(debut, debut + 24) 
+    const codes24 = hourlyForecast.weathercode.slice(debut, debut + 24)
+    const precip24 = hourlyForecast.precipitation_probability.slice(debut, debut + 24) 
 
     return (
         <div className={styles.hourlyForecast}>
@@ -64,7 +65,10 @@ function HourlyForecast({hourlyForecast}) {
                         - "{hour: '2-digit', minute: '2-digit'}" pour affichage en format "heure : minute" */}
                         <span className={styles.hour}>{new Date(hour).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}</span>
                         <span className={styles.emoji}>{getWeatherInfo(codes24[index]).emoji}</span>
+                        {/* Affiche la température */}
                         <span>{temps24[index]}°</span>
+                        {/* Affiche la probabilité de précipitions */}
+                        <span>💧{precip24[index]}%</span>
                     </div>
                 ))}
             </div>
