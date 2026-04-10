@@ -14,7 +14,18 @@
   overflow: auto;
   gap: 15px;
   padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   scroll-behavior: smooth;
+
+  /* * Crée un masque de visibilité : 
+ * Le dégradé définit quelles zones sont opaques (black) et lesquelles sont transparentes.
+ * Ici, on crée un fondu transparent aux extrémités (0-5% et 95-100%) 
+ * pour adoucir la coupure visuelle lors du scroll.
+ */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+
 }
 
 .hours {
@@ -38,4 +49,16 @@
 
 .emoji {
     font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .hourlyForecast {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .grid {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }

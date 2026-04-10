@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.3.9] - 2026-04-10
+### Ajouté
+- Ajout d'un effet de flou aux bordures gauches et droites des deux blocs de prévisions (24h et 7jours) avec mask-image pour coupure visuelle moins nette lors du scroll
+
 ## [v1.3.8] -2026-04-09
 ### Corrigé
 - Remise en place du pull-to-refresh sur mobile

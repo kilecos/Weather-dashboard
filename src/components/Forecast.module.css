@@ -53,13 +53,28 @@
 }
 
 @media (max-width: 600px) {
+
+  .forecast {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .title {
+    padding-left: 10px;
+  }
+
   .grid {
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
     overflow: auto;
     padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     scroll-behavior: smooth;
+
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }
 
   .day {
