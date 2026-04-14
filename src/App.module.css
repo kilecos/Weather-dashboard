@@ -10,14 +10,21 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100dvh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;  /* Pour que l'image soit bien derrière le contenu */
 
   will-change: transform;
+
+  /* Empêche les saccades lors du scroll sur certains mobiles */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+
+  /* Sécuité pour éviter que l'image ne bouge */
+  pointer-events: none;
 } 
 
 .app {

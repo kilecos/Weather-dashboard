@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.4.2] - 2026-04-14
+### Corrigé
+- Correction des effets de saut et saccade sur l'image de fond sur support mobile
+
 ## [v1.4.1] - 2026-04-14
 ## Modifié
 - Modifications sur la barre de recherche :
