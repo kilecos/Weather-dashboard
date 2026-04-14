@@ -8,10 +8,12 @@
 /* Réglages des images de fond afin qu'elles restent fixes */
 .backgroundLayer {
   position: fixed;
-  top: 0;
+  /* On fait déborder l'image de 5% en haut et en bas */
+  top: -5dvh;
   left: 0;
   width: 100vw;
-  height: 100dvh;
+  /* On lui donne 110% de la hauteur de l'écran */
+  height: 110dvh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
