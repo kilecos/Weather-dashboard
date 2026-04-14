@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.4.1] - 2026-04-14
+## Modifié
+- Modifications sur la barre de recherche :
+    - retrait du focus sur la barre suite à une recherche afin replier automatiquement le clavier sur mobile
+    - mise en place d'une classe CSS et d'un placeholder spécifiques pour afficher une erreur en cas de recherche à vide
+
 ## [v1.4.0] - 2026-04-10
 ## Ajouté
 - Ajout de l'affichage des probabilités de précipitations sur WeatherCard, Forecast et HourlyForecast
