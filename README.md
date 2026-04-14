@@ -9,9 +9,9 @@ Réalisées en HTML, CSS et JavaScript (React)
 ## Fonctionnalités :
 
 - 🔍 Recherche d'une ville via la barre de recherche (bouton ou touche Entrée)
-- 🌡️ Affichage des conditions météo actuelles : température, température ressentie, humidité et vitesse du vent
-- ⌚ Prévisions sur 24h avec météo et températures
-- 📅 Prévisions sur 7 jours avec météo, températures maximale et minimale
+- 🌡️ Affichage des conditions météo actuelles : température, température ressentie, humidité, vitesse du vent et probabilité de précipitations
+- ⌚ Prévisions sur 24h avec météo, températures et probabilité de précipitations
+- 📅 Prévisions sur 7 jours avec météo, températures maximale, minimale et probabilité de précipitations
 - 🖼️ Image de fond dynamique qui s'adapte aux conditions météo actuelles
 - 🕐 Heure de dernière mise à jour des données
 
