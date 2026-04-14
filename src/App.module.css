@@ -1,6 +1,6 @@
 .appContainer {
   position: relative;
-  min-height: 100dvh;
+  min-height: 100lvh;
   width: 100%;
   overflow-x: hidden;
 }
@@ -8,22 +8,20 @@
 /* Réglages des images de fond afin qu'elles restent fixes */
 .backgroundLayer {
   position: fixed;
-  /* On fait déborder l'image de 10% en haut et en bas */
-  top: -10dvh;
+  top: 0;
   left: 0;
   width: 100vw;
-  /* On lui donne 120% de la hauteur de l'écran */
-  height: 120dvh;
+  height: 100lvh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;  /* Pour que l'image soit bien derrière le contenu */
 
-  will-change: transform;
-
   /* Empêche les saccades lors du scroll sur certains mobiles */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+
+  will-change: transform;
 
   /* Sécuité pour éviter que l'image ne bouge */
   pointer-events: none;

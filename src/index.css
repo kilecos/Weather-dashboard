@@ -22,11 +22,15 @@
   scrollbar-color: grey transparent;
 }
 
+html {
+  overscroll-behavior: none;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Segoe UI', system-ui, sans-serif;
-  min-height: 100dvh;
+  min-height: 100lvh;
   overflow-x: hidden;
   width: 100%;
 }
