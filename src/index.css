@@ -20,17 +20,20 @@
   /* Personnalisation des scrollbars */
   scrollbar-width: thin;
   scrollbar-color: grey transparent;
-}
-
-html {
-  overscroll-behavior: none;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Segoe UI', system-ui, sans-serif;
-  min-height: 100lvh;
+  min-height: 100vh;
   overflow-x: hidden;
   width: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background-image 0.8s ease-in-out;
 }

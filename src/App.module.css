@@ -1,31 +1,9 @@
 .appContainer {
   position: relative;
-  min-height: 100lvh;
+  min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
 }
-
-/* Réglages des images de fond afin qu'elles restent fixes */
-.backgroundLayer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100lvh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;  /* Pour que l'image soit bien derrière le contenu */
-
-  /* Empêche les saccades lors du scroll sur certains mobiles */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-
-  will-change: transform;
-
-  /* Sécuité pour éviter que l'image ne bouge */
-  pointer-events: none;
-} 
 
 .app {
   max-width: 800px;
