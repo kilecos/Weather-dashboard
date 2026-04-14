@@ -72,19 +72,22 @@ function App() {
   }
 
   // Afin d'afficher une image de fond qui change en fonction de la météo
-  useEffect(() => {
+  /* useEffect(() => {
     if(meteo) {
       const bgUrl = getWeatherInfo(meteo.weathercode).background
       document.body.style.backgroundImage = `url('${bgUrl}')`
     } else {
       document.body.style.backgroundImage = 'none'
     }
-  }, [meteo])
+  }, [meteo]) */
 
   return (
     // Le conteneur principal change d'image de fond dynamiquement en fontion de la météo. Si aucune météo, pas de background
     // On affiche ensuite les différents composants de l'application en le passant en prop les state établis en amont (meteo, localisation, forecast,...)
     <div className={styles.appContainer}>
+      {meteo && (
+        <img src={getWeatherInfo(meteo?.weathercode).background} className={styles.backgroundLayer} alt="" />
+      )}
       <div className={styles.app}>
         {/* Voir Header.jsx */}
         <Header onReset={resetApp}
