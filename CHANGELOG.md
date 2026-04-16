@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [v1.4.6] - 2026-04-16
+### Modifié
+- Modification sur HourlyForecast.jsx pour prendre en compte l'heure locale de la ville recherché
+- Modification de l'affichage de l'heure pour forcer le format 24h même pour un utilisateur étranger
+
 ## [v1.4.5] - 2026-04-16
 ### Ajouté
 - Ajout de la prise en charge des codes 85 et 86 pouvant être envoyés par Open-Meteo pour "Averse de neige"

@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react'
 import styles from './HourlyForecast.module.css'
 import { getWeatherInfo } from '../utils/weatherUtils'
 
-function HourlyForecast({hourlyForecast}) {
+function HourlyForecast({hourlyForecast, meteo}) {
     // Création d'une référence (Ref) : un "post-it" collé sur l'élément HTML
     // Va permettre de manipuler le défilement sans passer par un state
     const scrollRef = useRef(null)
@@ -37,8 +37,12 @@ function HourlyForecast({hourlyForecast}) {
     // Si aucune prévisions, rien ne s'affiche
     if (!hourlyForecast) return null
 
-    // 1. On défini la "prochaine heure pile" qui sera le point de départ du tableau à afficher
-    const nextHour = new Date()
+    // 1. On défini la "prochaine heure pile" basée sur l'heure de la ville cible
+    // On crée une date à partir de meteo.time (l'heure locale fournie par l'API)
+    const cityTime = new Date(meteo.time)
+    const nextHour = new Date(cityTime)
+
+    // On passe à l'heure suivante pile
     nextHour.setHours(nextHour.getHours() +1, 0, 0, 0)
 
     // 2. On cherche l'index de l'heure actuelle dans le tableau time
@@ -62,8 +66,9 @@ function HourlyForecast({hourlyForecast}) {
                     <div key={index} className={styles.hours}>
                         {/* - "new Date(date)" convertit la chaine de caractère fournie par l'API en objet Date JavaScript
                         - ".toLocale.TimeString('fr-FR')" formate l'heure' en français
-                        - "{hour: '2-digit', minute: '2-digit'}" pour affichage en format "heure : minute" */}
-                        <span className={styles.hour}>{new Date(hour).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}</span>
+                        - "{hour: '2-digit', minute: '2-digit'}" pour affichage en format "heure : minute"
+                        - hour12: false force le format 24h même pour un utilisateur étranger */}
+                        <span className={styles.hour}>{new Date(hour).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', hour12: false })}</span>
                         <span className={styles.emoji}>{getWeatherInfo(codes24[index]).emoji}</span>
                         {/* Affiche la température */}
                         <span>{temps24[index]}°</span>

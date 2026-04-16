@@ -97,6 +97,7 @@ function App() {
           />
           <HourlyForecast
             hourlyForecast={hourlyForecast}
+            meteo={meteo}
           />
           {/* Voir Forecast.jsx */}
           <Forecast
