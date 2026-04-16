@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.4.5] - 2026-04-16
+### Ajouté
+- Ajout de la prise en charge des codes 85 et 86 pouvant être envoyés par Open-Meteo pour "Averse de neige"
+
 ## [v1.4.4] - 2026-04-16
 ### Corrigé
 - Correction de l'ordre des hooks dans HourlyForecast pour empêcher toutes erreurs React

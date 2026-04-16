@@ -11,6 +11,7 @@ export function getWeatherInfo(code) {
     if (code <= 69) return { emoji: "🌧️", description: "Pluie", background: `${import.meta.env.BASE_URL}backgrounds/bg-rainy.webp` }
     if (code <= 79) return { emoji: "❄️", description: "Neige", background: `${import.meta.env.BASE_URL}backgrounds/bg-snowy.webp` }
     if (code <= 82) return { emoji: "🌧️", description: "Averses", background: `${import.meta.env.BASE_URL}backgrounds/bg-rainy.webp` }
+    if (code <= 86) return { emoji: "🌨️", description: "Averses de neige", background: `${import.meta.env.BASE_URL}backgrounds/bg-snowy.webp` }
     if (code <= 99) return { emoji: "⛈️", description: "Orage", background: `${import.meta.env.BASE_URL}backgrounds/bg-stormy.webp` }
     return { emoji: "🌡️", description: "Inconnu" }
 }
