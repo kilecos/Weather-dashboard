@@ -66,7 +66,7 @@ function App() {
     setLocalisation(null)
     setForecast(null)
     setHourlyForecast(null)
-    setIsLoading(null)
+    setIsLoading(false)
     setErreur(null)
     setLastUpdate(null)
   }

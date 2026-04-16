@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [v1.4.4] - 2026-04-16
+### Corrigé
+- Correction de l'ordre des hooks dans HourlyForecast pour empêcher toutes erreurs React
+- Correction incohérence de type dans resetApp() dans App.jsx
+### Modifié
+- Sélection plus spécifique du lien dans le footer dans Footer.module.css
+
 ## [v1.4.3] - 2026-04-14
 ### Modifié
 - Modification du code dans App.jsx pour application des images de fond afin de résoudre le problème de l'affichage sur mobile"

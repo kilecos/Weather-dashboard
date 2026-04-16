@@ -3,9 +3,6 @@ import styles from './HourlyForecast.module.css'
 import { getWeatherInfo } from '../utils/weatherUtils'
 
 function HourlyForecast({hourlyForecast}) {
-    // Si aucune prévisions, rien ne s'affiche
-    if (!hourlyForecast) return null
-
     // Création d'une référence (Ref) : un "post-it" collé sur l'élément HTML
     // Va permettre de manipuler le défilement sans passer par un state
     const scrollRef = useRef(null)
@@ -36,6 +33,9 @@ function HourlyForecast({hourlyForecast}) {
             return () => el.removeEventListener('wheel', handleWheel)
         }
     }, [hourlyForecast]) // On relance si les données changent
+
+    // Si aucune prévisions, rien ne s'affiche
+    if (!hourlyForecast) return null
 
     // 1. On défini la "prochaine heure pile" qui sera le point de départ du tableau à afficher
     const nextHour = new Date()
