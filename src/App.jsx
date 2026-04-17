@@ -12,7 +12,7 @@ import HourlyForecast from './components/HourlyForecast'
 // Création du composant App qui va afficher l'application complète à l'écran
 function App() {
   // --- State de données ---
-  const [villeRecherchee, setVilleRecherchee] = useState("")  // Ville soumise via la SearchBar
+  const [villeRecherchee, setVilleRecherchee] = useState(null)  // Ville soumise via la SearchBar
   const [meteo, setMeteo] = useState(null)                    // Données météo actuelles
   const [localisation, setLocalisation] = useState(null)      // Infos de géocodage (nom exact, pays)
   const [forecast, setForecast] = useState(null)              // Prévisions sur 7 jours
@@ -29,7 +29,7 @@ function App() {
 
   // Déclenche la récupération des données dès que villeRecherchee change
   useEffect(() => {
-    if (villeRecherchee === "") return // On évite de lancer une recherche a vide
+    if (!villeRecherchee) return // On évite de lancer une recherche a vide
 
     async function fetchData() {
       // Réinitialisation de l'interface avant la nouvelle requête
@@ -40,8 +40,18 @@ function App() {
       setHourlyForecast(null)
 
       try {
+        let coords
         // On récupère les coordonnées de la ville recherchée
-        const coords = await getCoordinates(villeRecherchee)
+        // On vérifie si villeRecherchee est un texte ou un objet
+        if (typeof villeRecherchee === "string") {
+          // Premier Cas : l'utilisateur a tapé un texte et l'a validé en cliquant sur le bouton ou par la touche Entrée
+          // On appelle l'API pour trouver les coordonnées
+          coords = await getCoordinates(villeRecherchee)
+        } else {
+          // Deuxième Cas : l'utilisateur a cliqué sur une suggestion de la liste
+          // On a déjà tout dans l'objet (latitude, longitude, nom, pays)
+          coords = villeRecherchee
+        }
         // On récupère les données météo par rapport aux coordonnées
         const donneesMeteo = await getMeteo(coords.latitude, coords.longitude)
         setLocalisation(coords)
@@ -53,7 +63,7 @@ function App() {
         setErreur(error.message)
       } finally {
         setIsLoading(false)
-        setVilleRecherchee("") // On vide la barre de recherche
+        setVilleRecherchee(null) // On vide la barre de recherche
       }
     }
 
@@ -61,7 +71,7 @@ function App() {
   }, [villeRecherchee])
 
   function resetApp() {
-    setVilleRecherchee("")
+    setVilleRecherchee(null)
     setMeteo(null)
     setLocalisation(null)
     setForecast(null)

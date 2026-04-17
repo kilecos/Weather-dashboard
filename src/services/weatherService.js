@@ -2,6 +2,18 @@
 const GEO_URL = "https://geocoding-api.open-meteo.com/v1/search"
 const METEO_URL = "https://api.open-meteo.com/v1/forecast"
 
+// Fonction pour la liste de suggestions de villes
+export async function getCitySuggestions(ville) {
+    // On ne cherche que si l'utilisateur a saisi au moins 3 caractères
+    if (ville.trim().length < 3) return []
+
+    const response = await fetch(
+        `${GEO_URL}?name=${ville}&count=5&language=fr&format=json`
+    )
+    const data = await response.json()
+    return data.results || []
+}
+
 // Etape 1 - Convertir le nom de ville en coordonnées
 export async function getCoordinates(ville) {
     // On questionne l'API pour qu'elle fournisse les coordonnées de la ville recherchée

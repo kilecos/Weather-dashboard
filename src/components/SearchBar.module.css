@@ -4,8 +4,17 @@
   width: 100%;
 }
 
-.input {
+.inputContainer {
+  position: relative;
   flex: 1;
+}
+
+.inputContainer:has(.suggestList) .input {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.input {
+  width: 100%;
   padding: 14px 18px;
   background: var(--bg-card);
   backdrop-filter: blur(5px);
@@ -33,6 +42,51 @@
 
 .inputError::placeholder {
   color: red;
+}
+
+.suggestList {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  color: var(--bg-secondary);
+  padding: 10px 10px;
+  border: none;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.suggestion {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-radius: var(--border-radius);
+  padding: 10px;
+}
+
+.suggestion .villeDetails {
+  transition: color 0.2s ease;
+}
+
+.suggestion:hover .villeDetails {
+  color: var(--text-secondary);
+}
+
+.suggestion:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.villeName {
+  font-weight: 700;
+}
+
+.villeDetails {
+  font-size: 0.9rem;
 }
 
 .button {

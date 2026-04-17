@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [v1.5.0] - 2026-04-17
+### Ajouté
+- Nouvelle fonctionnalité : ajout d'une liste de suggestions de ville lors de la saisie dans la barre de recherche par l'utilisateur
+- Possibilité de recherche par sélection d'une des suggestions de la liste
+
 ## [v1.4.6] - 2026-04-16
 ### Modifié
 - Modification sur HourlyForecast.jsx pour prendre en compte l'heure locale de la ville recherché

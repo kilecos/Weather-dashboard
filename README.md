@@ -9,6 +9,7 @@ Réalisées en HTML, CSS et JavaScript (React)
 ## Fonctionnalités :
 
 - 🔍 Recherche d'une ville via la barre de recherche (bouton ou touche Entrée)
+- 📋 Liste de suggestion de villes par rapport à la saisie dans la barre de recherche avec recherche lors de la sélection de l'une d'elles
 - 🌡️ Affichage des conditions météo actuelles : température, température ressentie, humidité, vitesse du vent et probabilité de précipitations
 - ⌚ Prévisions sur 24h avec météo, températures et probabilité de précipitations
 - 📅 Prévisions sur 7 jours avec météo, températures maximale, minimale et probabilité de précipitations
