@@ -3,6 +3,7 @@ import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import WeatherCard from './components/WeatherCard'
 import Forecast from './components/Forecast'
+import SunTime from './components/SunTime'
 import Footer from './components/Footer'
 import { getCoordinates, getMeteo } from './services/weatherService'
 import styles from './App.module.css'
@@ -111,6 +112,10 @@ function App() {
           />
           {/* Voir Forecast.jsx */}
           <Forecast
+            forecast={forecast}
+          />
+          {/* Voir SunTime.jsx */}
+          <SunTime
             forecast={forecast}
           />
         </main>

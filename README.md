@@ -13,6 +13,7 @@ Réalisées en HTML, CSS et JavaScript (React)
 - 🌡️ Affichage des conditions météo actuelles : température, température ressentie, humidité, vitesse du vent et probabilité de précipitations
 - ⌚ Prévisions sur 24h avec météo, températures et probabilité de précipitations
 - 📅 Prévisions sur 7 jours avec météo, températures maximale, minimale et probabilité de précipitations
+- ☀️ Affichages des heures de lever et de coucher du soleil pour la journée en cours
 - 🖼️ Image de fond dynamique qui s'adapte aux conditions météo actuelles
 - 🕐 Heure de dernière mise à jour des données
 

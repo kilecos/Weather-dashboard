@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.6.0] - 2026-04-20
+### Ajouté
+- Ajout de l'affichage des heures de lever et de coucher du soleil pour la journée en cours
+
 ## [v1.5.1] - 2026-04-20
 ### Modifié
 - Ajout de la possibilité de fermeture de la liste de suggestions sur du clic en dehors de celle-ci ou de la barre de recherche
