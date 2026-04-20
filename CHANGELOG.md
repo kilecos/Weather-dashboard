@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [v1.5.1] - 2026-04-20
+### Modifié
+- Ajout de la possibilité de fermeture de la liste de suggestions sur du clic en dehors de celle-ci ou de la barre de recherche
+- Modifications rendu visuel de la liste de suggestions
+
 ## [v1.5.0] - 2026-04-17
 ### Ajouté
 - Nouvelle fonctionnalité : ajout d'une liste de suggestions de ville lors de la saisie dans la barre de recherche par l'utilisateur

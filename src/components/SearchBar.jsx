@@ -11,6 +11,8 @@ function SearchBar({onSearch, villeRecherchee}) {
     const [isError, setIsError] = useState(false)
     // Ref pour accéder directement au DOM de l'input
     const inputRef = useRef(null)
+    // Ref pour accéder au block input + liste + bouton
+    const searchRef = useRef(null)
 
     function handleChange(event) {
         // On récupère la valeur de l'input et met à jour le state ville
@@ -78,8 +80,24 @@ function SearchBar({onSearch, villeRecherchee}) {
         }
     }, [villeRecherchee])
 
+    // Fermeture de la liste de suggestions par clic en dehors de celle-ci ou de l'input
+    useEffect(() => {
+        function handleClickOutside(e) {
+            // Si la Ref existe et que l'élément cliqué n'est pas dans le bloc searchbar
+            if (searchRef.current && !searchRef.current.contains(event.target)) {
+                setVilleSuggest([])
+            }
+        }
+        // On attache l'évènement au document
+        document.addEventListener("mousedown", handleClickOutside)
+        // Nettoyage de l'évènement pour éviter les fuites de mémoire
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [])
+
     return (
-        <div className={styles.searchBar}>
+        <div className={styles.searchBar} ref={searchRef}>
             <div className={styles.inputContainer}>
                 {/* L'input dans lequel on entre la ville recherchée et qui va exécuter le fonction keySearch sur l'évènement onKeyDown */}
                 <input onKeyDown={keySearch}

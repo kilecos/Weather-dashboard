@@ -63,8 +63,8 @@
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  border-radius: var(--border-radius);
+  transition: background-color 0.2s ease, color 0.2s ease, border-radius 0.2s ease;
+  border-bottom: 1px solid var(--bg-secondary);
   padding: 10px;
 }
 
@@ -79,6 +79,7 @@
 .suggestion:hover {
   background-color: var(--bg-secondary);
   color: var(--text-primary);
+  border-radius: var(--border-radius);
 }
 
 .villeName {
