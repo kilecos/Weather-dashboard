@@ -5,9 +5,42 @@
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
     padding: 24px;
+}
+
+.courbeContainer {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.courbeFond {
+    stroke: white;
+    stroke-opacity: 0.3;
+    stroke-width: 2px;
+}
+
+.courbePassee {
+    stroke: gold;
+    stroke-dasharray: 210;
+    stroke-dashoffset: var(--offset);
+}
+
+.courbeContainer line {
+    stroke: white;
+    stroke-opacity: 0.1;
+}
+
+.courbeContainer circle {
+    fill: gold;
+}
+
+.hourContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10%; 
 }
 
 .sun {
@@ -15,10 +48,6 @@
     flex-direction: column;
     gap: 10px;
     text-align: center;
-}
-
-.emoji {
-    font-size: 4rem;
 }
 
 .sunTitle {
@@ -30,4 +59,18 @@
     color: var(--text-primary);
     font-weight: 700;
     font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+    .hourContainer {
+        padding: 0 5%;
+    }
+
+    .sunTitle {
+        font-size: 0.8rem;
+    }
+
+    .sunHour {
+        font-size: 0.9rem;
+    }
 }

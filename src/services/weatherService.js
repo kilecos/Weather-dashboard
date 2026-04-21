@@ -38,7 +38,7 @@ export async function getMeteo(latitude, longitude) {
     const response = await fetch(
         `${METEO_URL}?latitude=${latitude}&longitude=${longitude}`
         + `&current=temperature_2m,apparent_temperature,windspeed_10m,winddirection_10m,relativehumidity_2m,weathercode,precipitation_probability`
-        + `&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_probability_mean,sunrise,sunset`
+        + `&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_probability_mean,sunrise,sunset,daylight_duration`
         + `&hourly=weathercode,temperature_2m,precipitation_probability`
         + `&timezone=auto`
     )

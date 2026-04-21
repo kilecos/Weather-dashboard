@@ -117,6 +117,7 @@ function App() {
           {/* Voir SunTime.jsx */}
           <SunTime
             forecast={forecast}
+            meteo={meteo}
           />
         </main>
         {/* Voir Footer.jsx */}

@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.6.1] - 2026-04-21
+### Modifié
+- Ajout d'une courbe pour représenter le cycle du soleil pour la journée en cours
+- Retrait des émoji pour le lever et le coucher du soleil
+- Ajustements CSS pour le rendu mobile de l'affichage des heures de lever et de coucher du soleil
+
 ## [v1.6.0] - 2026-04-20
 ### Ajouté
 - Ajout de l'affichage des heures de lever et de coucher du soleil pour la journée en cours
