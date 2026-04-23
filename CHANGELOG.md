@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [v1.7.1] - 2026-04-23
+### Modifié
+- Mise à jour de README.md suite aux dernières modifications
+- Correction de l'affichage de la pression dans InfosSupp.jsx
+
 ## [v1.7.0] - 2026-04-23
 ### Ajouté
 - Ajout nouvelles sections InfosSupp comprenant les données vitesse du vent, humidité, pression et indice UV

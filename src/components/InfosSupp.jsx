@@ -20,7 +20,7 @@ function InfosSupp ({meteo, forecast}) {
             </div>
             <div className={styles.detail}>
                 <span className={styles.detailLabel}>Pression</span>
-                <span className={styles.detailValue}>{meteo.pressure_msl}mbar</span>
+                <span className={styles.detailValue}>{meteo.pressure_msl} mbar</span>
             </div>
         </div>
     )
