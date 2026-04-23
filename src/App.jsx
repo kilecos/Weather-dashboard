@@ -3,6 +3,7 @@ import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import WeatherCard from './components/WeatherCard'
 import Forecast from './components/Forecast'
+import InfosSupp from './components/InfosSupp'
 import SunTime from './components/SunTime'
 import Footer from './components/Footer'
 import { getCoordinates, getMeteo } from './services/weatherService'
@@ -102,6 +103,7 @@ function App() {
           {/* Voir WeatherCard.jsx */}
           <WeatherCard
             meteo={meteo}
+            forecast={forecast}
             localisation={localisation}
             isLoading={isLoading}
             erreur={erreur}
@@ -112,6 +114,10 @@ function App() {
           />
           {/* Voir Forecast.jsx */}
           <Forecast
+            forecast={forecast}
+          />
+          <InfosSupp
+            meteo={meteo}
             forecast={forecast}
           />
           {/* Voir SunTime.jsx */}

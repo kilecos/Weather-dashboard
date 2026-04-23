@@ -6,6 +6,10 @@
   padding: 30px;
   box-shadow: var(--shadow);
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .loading {
@@ -67,10 +71,12 @@
 
 .details {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 80px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
+  gap: 20px;
+  padding: 20px;
+  padding-left: 80px;
+  border-left: 1px solid var(--border);
 }
 
 .detail {
@@ -91,6 +97,9 @@
 }
 
 @media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+  }
 
   .loading {
     width: 100%;
@@ -112,5 +121,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    padding: 0;
+    padding-top: 20px;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .detailValue {
+    font-size: 1rem;
   }
 }

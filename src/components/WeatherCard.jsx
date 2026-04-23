@@ -2,7 +2,7 @@ import styles from './WeatherCard.module.css'
 import { getWeatherInfo } from '../utils/weatherUtils'
 
 // Création du composant WeatherCard pour afficher la météo actuelle de la ville renseignée
-function WeatherCard({meteo, localisation, isLoading, erreur}) {
+function WeatherCard({meteo, localisation, isLoading, erreur, forecast}) {
     // Le message de chargement qui s'affiche lors de la recherche
     if (isLoading) {
         return (
@@ -30,30 +30,25 @@ function WeatherCard({meteo, localisation, isLoading, erreur}) {
 
     return (
         <div className={styles.card}>
-            <div className={styles.location}>
-                <h2>{localisation.name}</h2>
-                <span>{localisation.country}</span>
+            <div className={styles.presentation}>
+                <div className={styles.location}>
+                    <h2>{localisation.name}</h2>
+                    <span>{localisation.country}</span>
+                </div>
+                <div className={styles.main}>
+                    <span className={styles.emoji}>{emoji}</span>
+                    <span className={styles.temperature}>{meteo.temperature_2m}°</span>
+                </div>
+                <p className={styles.description}>{description}</p>
             </div>
-
-            <div className={styles.main}>
-                <span className={styles.emoji}>{emoji}</span>
-                <span className={styles.temperature}>{meteo.temperature_2m}°</span>
-            </div>
-
-            <p className={styles.description}>{description}</p>
-
             <div className={styles.details}>
                 <div className={styles.detail}>
-                    <span className={styles.detailLabel}>💨 Vent</span>
-                    <span className={styles.detailValue}>{meteo.windspeed_10m} km/h</span>
+                    <span className={styles.detailLabel}>🌡️ Températures</span>
+                    <span className={styles.detailValue}>↑ {forecast.temperature_2m_max[0]}° / ↓ {forecast.temperature_2m_min[0]}°</span>
                 </div>
                 <div className={styles.detail}>
-                    <span className={styles.detailLabel}>🌡️ Température Ressentie</span>
+                    <span className={styles.detailLabel}>🌡️ Ressentie</span>
                     <span className={styles.detailValue}>{meteo.apparent_temperature}°</span>
-                </div>
-                <div className={styles.detail}>
-                    <span className={styles.detailLabel}>💦 Humidité</span>
-                    <span className={styles.detailValue}>{meteo.relativehumidity_2m} %</span>
                 </div>
                 <div className={styles.detail}>
                     <span className={styles.detailLabel}>💧 Précipitations</span>

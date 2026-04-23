@@ -1,0 +1,32 @@
+.infosContainer {
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    background-color: var(--bg-card);
+    backdrop-filter: blur(5px);
+    border-radius: var(--border-radius);
+}
+
+.detailLabel {
+    color: var(--text-secondary);
+}
+
+.detailValue {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+    .infosContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

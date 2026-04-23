@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## [v1.7.0] - 2026-04-23
+### Ajouté
+- Ajout nouvelles sections InfosSupp comprenant les données vitesse du vent, humidité, pression et indice UV
+### Modifié
+- Changement description weathercode de "Ciel dégagé" à "Ensoleillé"
+- Modification de la WeatherCard :
+    - retrait des informations vitesse du vent et humidité
+    - ajout des températures max et min de la journée en cours
+    - réorganisation de l'affichage Desktop & Mobile
+
 ## [v1.6.1] - 2026-04-21
 ### Modifié
 - Ajout d'une courbe pour représenter le cycle du soleil pour la journée en cours
