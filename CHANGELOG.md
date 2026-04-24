@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## [v1.8.0] - 2026-04-23
+### Ajouté
+- Ajout de représentations visuelles pour les données contenues dans InfosSupp :
+    - barre de progression pour l'humidité
+    - barre avec curseur pour l'indice UV
+    - barre de progression avec graduations pour la pression
+    - compas avec flèche indiquant la direction du vent
+### Modifié
+- Ajustement taille des cartes dans infosSupp
+- Retrait ligne de code mort (mis en commentaire) dans SearchBar.module.css
+
 ## [v1.7.1] - 2026-04-23
 ### Modifié
 - Mise à jour de README.md suite aux dernières modifications

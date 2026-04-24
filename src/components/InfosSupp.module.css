@@ -8,7 +8,9 @@
 .detail {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    justify-content: space-between;
+    
+    height: 200px;
     padding: 20px;
     background-color: var(--bg-card);
     backdrop-filter: blur(5px);
@@ -19,10 +21,135 @@
     color: var(--text-secondary);
 }
 
+.valueContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .detailValue {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
+}
+
+.compass {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 5px solid white;
+    position: relative;
+}
+
+.compass::before {
+    content: "N";
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    width: 4px;
+    height: 4px;
+    color: var(--text-secondary);
+    border-radius: 50%;
+}
+
+.compass::after {
+    content: "S";
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.pointE, .pointO {
+    position: absolute;
+    font-size: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.pointE {
+    right: 2px;
+}
+
+.pointO {
+    left: 2px;
+}
+
+.arrowContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-out;
+}
+
+.arrow {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 15px solid #ff4d4d;
+}
+
+.progressBarHumi {
+    background-color: rgb(97, 97, 97);
+    width: 100%;
+    height: 15px;
+    border-radius: var(--border-radius);
+}
+
+.progressBarHumiFill {
+    background: linear-gradient(90deg,rgba(143, 225, 255, 1) 0%, rgba(24, 193, 255, 1) 25%, rgba(0, 187, 255, 1) 50%, rgba(65, 149, 218, 1) 75%);
+    height: inherit;
+    border-radius: var(--border-radius);
+}
+
+.progressBarUV {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 15px;
+    border-radius: var(--border-radius);
+    background: linear-gradient(90deg,rgba(66, 250, 37, 1) 0%, rgba(247, 255, 0, 1) 25%, rgba(255, 170, 24, 1) 50%, rgba(255, 0, 0, 1) 75%, rgba(218, 65, 147, 1) 100%);
+}
+
+.circleUV {
+    background-color: transparent;
+    border: 4px solid white;
+    border-radius: 50%;
+    padding: 7.5px;
+    z-index: 1000S;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.progressBarPress {
+    background-color: rgb(97, 97, 97);
+    width: 100%;
+    height: 15px;
+    border-radius: var(--border-radius);
+    background-image: repeating-linear-gradient(90deg, white, white 1px, transparent 1px, transparent 40px),
+                      repeating-linear-gradient(90deg, white, white 1px, transparent 1px, transparent 4px);
+    background-size: 100% 100%, 100% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.progressBarPressFill {
+    background-color: rgba(255, 255, 255, 0.7);
+    height: inherit;
+    border-radius: var(--border-radius);
 }
 
 @media (max-width: 600px) {
