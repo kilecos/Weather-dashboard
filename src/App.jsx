@@ -116,6 +116,7 @@ function App() {
           <Forecast
             forecast={forecast}
           />
+          {/* Voir InfosSupp.jsx */}
           <InfosSupp
             meteo={meteo}
             forecast={forecast}

@@ -9,7 +9,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
     height: 200px;
     padding: 20px;
     background-color: var(--bg-card);
@@ -33,6 +32,7 @@
     color: var(--text-primary);
 }
 
+/* Le cadran de la boussole */
 .compass {
     width: 80px;
     height: 80px;
@@ -41,6 +41,7 @@
     position: relative;
 }
 
+/* Le point cardinal Nord */
 .compass::before {
     content: "N";
     position: absolute;
@@ -54,6 +55,7 @@
     border-radius: 50%;
 }
 
+/* Le point cardinal Sud */
 .compass::after {
     content: "S";
     position: absolute;
@@ -64,6 +66,7 @@
     color: var(--text-secondary);
 }
 
+/* Les point Est et Ouest */
 .pointE, .pointO {
     position: absolute;
     font-size: 0.7rem;
@@ -80,6 +83,7 @@
     left: 2px;
 }
 
+/* La boite qui ne contient que la flèche et qui va tourner sur elle-même */
 .arrowContainer {
     position: absolute;
     top: 0;
@@ -89,11 +93,13 @@
     transition: transform 0.5s ease-out;
 }
 
+/* La flèche dessinée par CSS */
 .arrow {
     position: absolute;
-    top: 15px;
+    top: 15px; /* Distance par rapport au bord haut (N) */
     left: 50%;
     transform: translateX(-50%);
+    /* Le dessin du triangle */
     width: 0;
     height: 0;
     border-left: 7px solid transparent;
@@ -101,6 +107,7 @@
     border-bottom: 15px solid #ff4d4d;
 }
 
+/* La barre de progression pour l'humidité */
 .progressBarHumi {
     background-color: rgb(97, 97, 97);
     width: 100%;
@@ -108,12 +115,14 @@
     border-radius: var(--border-radius);
 }
 
+/* Le remplissage de la barre de progression de l'humidité */
 .progressBarHumiFill {
     background: linear-gradient(90deg,rgba(143, 225, 255, 1) 0%, rgba(24, 193, 255, 1) 25%, rgba(0, 187, 255, 1) 50%, rgba(65, 149, 218, 1) 75%);
     height: inherit;
     border-radius: var(--border-radius);
 }
 
+/* La barre pour visualisé l'indice UV */
 .progressBarUV {
     position: relative;
     display: flex;
@@ -124,28 +133,32 @@
     background: linear-gradient(90deg,rgba(66, 250, 37, 1) 0%, rgba(247, 255, 0, 1) 25%, rgba(255, 170, 24, 1) 50%, rgba(255, 0, 0, 1) 75%, rgba(218, 65, 147, 1) 100%);
 }
 
+/* Le curseur de l'indice UV */
 .circleUV {
     background-color: transparent;
     border: 4px solid white;
     border-radius: 50%;
     padding: 7.5px;
-    z-index: 1000S;
+    z-index: 1000;
     transform: translateX(-50%);
     position: absolute;
 }
 
+/* La barre de pression pour la pression */
 .progressBarPress {
     background-color: rgb(97, 97, 97);
     width: 100%;
     height: 15px;
     border-radius: var(--border-radius);
-    background-image: repeating-linear-gradient(90deg, white, white 1px, transparent 1px, transparent 40px),
-                      repeating-linear-gradient(90deg, white, white 1px, transparent 1px, transparent 4px);
+    /* Les graduations de la barre */
+    background-image: repeating-linear-gradient(90deg, white, white 1px, transparent 1px, transparent 40px), /* Les grandes graduations */
+                      repeating-linear-gradient(90deg, white, white 1px, transparent 1px, transparent 4px);  /* Les petites graduations */
     background-size: 100% 100%, 100% 50%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+/* Le remplissage de la barre de progression de la pression */
 .progressBarPressFill {
     background-color: rgba(255, 255, 255, 0.7);
     height: inherit;
