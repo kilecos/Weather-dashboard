@@ -14,7 +14,12 @@ import HourlyForecast from './components/HourlyForecast'
 // Création du composant App qui va afficher l'application complète à l'écran
 function App() {
   // --- State de données ---
-  const [villeRecherchee, setVilleRecherchee] = useState(null)  // Ville soumise via la SearchBar
+  const [villeRecherchee, setVilleRecherchee] = useState(() => {
+    const derniereRecherche = localStorage.getItem("derniereVille")  // On recupère la ville sauvegardée
+    // Si une ville a déjà été sauvegarder dans localStorage, villeRecherchee correspondra à cette dernière
+    // Sinon, on initialise villeRecherchee à null et sera modifié lors de la soumission d'une ville dans la recherche
+    return derniereRecherche ? derniereRecherche : null
+  })
   const [meteo, setMeteo] = useState(null)                    // Données météo actuelles
   const [localisation, setLocalisation] = useState(null)      // Infos de géocodage (nom exact, pays)
   const [forecast, setForecast] = useState(null)              // Prévisions sur 7 jours
@@ -57,6 +62,7 @@ function App() {
         // On récupère les données météo par rapport aux coordonnées
         const donneesMeteo = await getMeteo(coords.latitude, coords.longitude)
         setLocalisation(coords)
+        localStorage.setItem("derniereVille", coords.name)  // On sauvegarde la ville recherchée dans localStorage pour la recupérer au prochain chargement de l'appli
         setMeteo(donneesMeteo.current)
         setForecast(donneesMeteo.daily)
         setHourlyForecast(donneesMeteo.hourly)
@@ -108,6 +114,7 @@ function App() {
             isLoading={isLoading}
             erreur={erreur}
           />
+          {/* Voir HourlyForecast.jsx */}
           <HourlyForecast
             hourlyForecast={hourlyForecast}
             meteo={meteo}

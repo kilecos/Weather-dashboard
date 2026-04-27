@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.9.0] - 2026-04-27
+### Ajouté
+- Ajout de la fonctionnalité de sauvegarde de la dernière ville recherchée :
+    - sauvegarde dans localStorage lors de la recherche d'une ville
+    - récupération de cette dernière lors de l'actualisation ou d'une nouvelle ouverture de l'appli pour afficher directement la météo de cette ville
+
 ## [v1.8.1] - 2026-04-24
 ### Ajouté
 - Ajout de commentaires pour InfosSupp.jsx et InfosSupp.module.css
