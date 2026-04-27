@@ -32,26 +32,31 @@
   text-align: center;
 }
 
+/* Le jour */
 .day span:first-child {
   font-size: 0.75rem;
   color: var(--text-secondary);
 }
 
+/* L'émoji */
 .day span:nth-child(2) {
   font-size: 1.5rem;
 }
 
+/* La température max */
 .day span:nth-child(3) {
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
+/* La température min */
 .day span:nth-child(4) {
   font-size: 0.8rem;
   color: var(--text-secondary);
 }
 
+/* La probabilité de précipitations */
 .day span:last-child {
   font-size: 0.8rem;
   color: var(--text-secondary);
@@ -68,6 +73,7 @@
     padding-left: 10px;
   }
 
+  /* En format mobile, on garde l'alignement en ligne et on permet le scroll pour faire défiler les jours */
   .grid {
     display: flex;
     flex-direction: row;
@@ -78,6 +84,10 @@
     padding-right: 10px;
     scroll-behavior: smooth;
 
+    /* Crée un masque de visibilité : 
+        Le dégradé définit quelles zones sont opaques (black) et lesquelles sont transparentes.
+        Ici, on crée un fondu transparent aux extrémités (0-5% et 95-100%) pour adoucir la coupure visuelle lors du scroll.
+    */
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }

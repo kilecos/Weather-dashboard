@@ -18,11 +18,10 @@
   padding-right: 15px;
   scroll-behavior: smooth;
 
-  /* * Crée un masque de visibilité : 
- * Le dégradé définit quelles zones sont opaques (black) et lesquelles sont transparentes.
- * Ici, on crée un fondu transparent aux extrémités (0-5% et 95-100%) 
- * pour adoucir la coupure visuelle lors du scroll.
- */
+  /* Crée un masque de visibilité : 
+      Le dégradé définit quelles zones sont opaques (black) et lesquelles sont transparentes.
+      Ici, on crée un fondu transparent aux extrémités (0-5% et 95-100%) pour adoucir la coupure visuelle lors du scroll.
+  */
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
 }
@@ -39,10 +38,12 @@
   flex: 0 0 70px;
 }
 
+/* La température */
 .hours span:nth-child(3) {
   font-weight: 700;
 }
 
+/* La probabilité de précipitations */
 .hours span:last-child {
   font-size: 0.8rem;
   color: var(--text-secondary);

@@ -12,6 +12,7 @@
   align-items: center;
 }
 
+/* Ce qui s'affiche lors du chargement de l'API */
 .loading {
   margin: 0 auto;
   text-align: center;
@@ -31,6 +32,7 @@
   border-color: var(--error);
 }
 
+/* La ville */
 .location h2 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -38,6 +40,7 @@
   margin-bottom: 4px;
 }
 
+/* Le pays */
 .location span {
   font-size: 1rem;
   color: var(--text-secondary);
