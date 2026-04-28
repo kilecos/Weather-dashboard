@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react'
 import styles from './HourlyForecast.module.css'
 import { getWeatherInfo } from '../utils/weatherUtils'
 
-function HourlyForecast({hourlyForecast, meteo}) {
+function HourlyForecast({hourlyForecast, meteo, forecast}) {
     // Création d'une référence (Ref) : un "post-it" collé sur l'élément HTML
     // Va permettre de manipuler le défilement sans passer par un state
     const scrollRef = useRef(null)
@@ -35,7 +35,7 @@ function HourlyForecast({hourlyForecast, meteo}) {
     }, [hourlyForecast]) // On relance si les données changent
 
     // Si aucune prévisions, rien ne s'affiche
-    if (!hourlyForecast) return null
+    if (!hourlyForecast || !forecast) return null
 
     // 1. On défini la "prochaine heure pile" basée sur l'heure de la ville cible
     // On crée une date à partir de meteo.time (l'heure locale fournie par l'API)
@@ -58,6 +58,25 @@ function HourlyForecast({hourlyForecast, meteo}) {
     const codes24 = hourlyForecast.weathercode.slice(debut, debut + 24)
     const precip24 = hourlyForecast.precipitation_probability.slice(debut, debut + 24) 
 
+    // Fonction pour savoir s'il fait jour à une heure donnée
+    const checkIsDay = (dateCible) => {
+        // On extrait uniquement la date pour trouver le bon index dans le tableau daily
+        const dateStr = new Date(dateCible).toISOString().split('T')[0]
+        // On cherche à quel jour (index) correspondent ces données dans le tableau forecast (ex : 0 pour aujourd'hui, 1 pour demain)
+        const indexJour = forecast.time.indexOf(dateStr)
+        // Si la date n'est pas trouvée dans les prévisions, on retourne "jour" (1) par défaut
+        if (indexJour === -1) return 1
+        // On crée des objets Date réels pour le lever et le coucher du soleil de ce jour précis
+        const lever = new Date(forecast.sunrise[indexJour])
+        const coucher = new Date(forecast.sunset[indexJour])
+        // On convertit l'heure en objet Date pour pouvoir faire la comparaison
+        const cible = new Date(dateCible)
+        // Logique de comparaison :
+        // Il fait jour (1) SI l'heure cible est comprise entre le lever et le coucher
+        // Sinon, il fait nuit (0)
+        return (cible >= lever && cible < coucher) ? 1 : 0
+    }
+
     return (
         <div className={styles.hourlyForecast}>
             <div className={styles.grid} ref={scrollRef}>
@@ -69,7 +88,7 @@ function HourlyForecast({hourlyForecast, meteo}) {
                         - "{hour: '2-digit', minute: '2-digit'}" pour affichage en format "heure : minute"
                         - hour12: false force le format 24h même pour un utilisateur étranger */}
                         <span className={styles.hour}>{new Date(hour).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', hour12: false })}</span>
-                        <span className={styles.emoji}>{getWeatherInfo(codes24[index]).emoji}</span>
+                        <span className={styles.emoji}>{getWeatherInfo(codes24[index], checkIsDay(hour)).emoji}</span>
                         {/* Affiche la température */}
                         <span>{temps24[index]}°</span>
                         {/* Affiche la probabilité de précipitions */}

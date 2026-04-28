@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.10.0] -2026-04-28
+### Ajouté
+- Ajout d'un mode nuit dynamique basé sur les heures de lever/coucher du soleil :
+    - Ajustement de l'image de fond en fonction de s'il fait nuit ou non
+    - Ajustement des emoji dans la carte des informations immédiates et dans les prévisions par heure
+
 ## [v1.9.2] -2026-04-28
 ### Corrigé
 - Correction de l'affichage de la direction du vent afin d'afficher correction la direction dans laquelle va le vent et non d'ou il provient

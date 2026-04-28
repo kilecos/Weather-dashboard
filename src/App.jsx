@@ -96,7 +96,7 @@ function App() {
     <div className={styles.appContainer}>
       {/* On affiche une image de fond qui change en fonction de la météo */}
       {meteo && (
-        <img src={getWeatherInfo(meteo?.weathercode).background} className={styles.backgroundLayer} alt="" />
+        <img src={getWeatherInfo(meteo?.weathercode, meteo.is_day).background} className={styles.backgroundLayer} alt="" />
       )}
       <div className={styles.app}>
         {/* Voir Header.jsx */}
@@ -119,6 +119,7 @@ function App() {
           <HourlyForecast
             hourlyForecast={hourlyForecast}
             meteo={meteo}
+            forecast={forecast}
           />
           {/* Voir Forecast.jsx */}
           <Forecast

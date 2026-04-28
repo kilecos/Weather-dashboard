@@ -26,7 +26,7 @@ function WeatherCard({meteo, localisation, isLoading, erreur, forecast}) {
     if (!meteo) return null
 
     // On récupère les données renvoyées par getWeatherInfo qui sert de traducteur au code renvoyé par l'API (voir weatherUtils.js)
-    const {emoji, description} = getWeatherInfo(meteo.weathercode)
+    const {emoji, description} = getWeatherInfo(meteo.weathercode, meteo.is_day)
 
     return (
         <div className={styles.card}>
