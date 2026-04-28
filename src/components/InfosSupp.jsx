@@ -15,7 +15,7 @@ function InfosSupp ({meteo, forecast}) {
                         <span className={styles.pointE}>E</span>
                         <span className={styles.pointO}>O</span>
                         {/* Le conteneur de la flèche tournant sur lui-même en fonction de la direction du vent */}
-                        <div className={styles.arrowContainer} style={{transform: `rotate(${meteo.winddirection_10m}deg)`}}>
+                        <div className={styles.arrowContainer} style={{transform: `rotate(${meteo.winddirection_10m + 180}deg)`}}>
                             {/* La flèche indiquant la direction du vent */}
                             <div className={styles.arrow}/>
                         </div>

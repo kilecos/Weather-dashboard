@@ -12,7 +12,7 @@ Réalisées en HTML, CSS et JavaScript (React)
 - 💾 Sauvegarde de la dernière ville recherchée pour la récupérer à la prochaine ouverture de l'appli
 - ❌ Reset complet de l'application (affichage des infos et mémoire) lors du clic sur le titre
 - 📋 Liste de suggestion de villes par rapport à la saisie dans la barre de recherche avec recherche lors de la sélection de l'une d'elles
-- 🌡️ Affichage des conditions météo actuelles : température, température ressentie, humidité, vitesse du vent, probabilité de précipitations, pression et indice UV
+- 🌡️ Affichage des conditions météo actuelles : température, température ressentie, humidité, vitesse et direction du vent, probabilité de précipitations, pression et indice UV
 - ⌚ Prévisions sur 24h avec météo, températures et probabilité de précipitations
 - 📅 Prévisions sur 7 jours avec météo, températures maximale, minimale et probabilité de précipitations
 - ☀️ Affichages des heures de lever et de coucher du soleil pour la journée en cours

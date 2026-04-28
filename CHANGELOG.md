@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.9.2] -2026-04-28
+### Corrigé
+- Correction de l'affichage de la direction du vent afin d'afficher correction la direction dans laquelle va le vent et non d'ou il provient
+
 ## [v1.9.1] - 2026-04-28
 ### Modifié
 - Modification de la fonction de reset lors du clic sur le header avec ajout du reset de localStorage pour un reset complet de l'application
