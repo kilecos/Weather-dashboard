@@ -16,6 +16,7 @@ Réalisées en HTML, CSS et JavaScript (React)
 - ⌚ Prévisions sur 24h avec météo, températures et probabilité de précipitations
 - 📅 Prévisions sur 7 jours avec météo, températures maximale, minimale et probabilité de précipitations
 - ☀️ Affichages des heures de lever et de coucher du soleil pour la journée en cours
+- 🕛 Mode nuit dynamique basé sur les heures de lever/coucher du soleil
 - 🖼️ Image de fond dynamique qui s'adapte aux conditions météo actuelles
 - 🕐 Heure de dernière mise à jour des données
 
