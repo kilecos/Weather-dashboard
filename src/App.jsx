@@ -87,6 +87,7 @@ function App() {
     setIsLoading(false)
     setErreur(null)
     setLastUpdate(null)
+    localStorage.removeItem("derniereVille")
   }
 
   return (

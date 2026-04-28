@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.9.1] - 2026-04-28
+### Modifié
+- Modification de la fonction de reset lors du clic sur le header avec ajout du reset de localStorage pour un reset complet de l'application
+
 ## [v1.9.0] - 2026-04-27
 ### Ajouté
 - Ajout de la fonctionnalité de sauvegarde de la dernière ville recherchée :

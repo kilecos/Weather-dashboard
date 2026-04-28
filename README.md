@@ -10,6 +10,7 @@ Réalisées en HTML, CSS et JavaScript (React)
 
 - 🔍 Recherche d'une ville via la barre de recherche (bouton ou touche Entrée)
 - 💾 Sauvegarde de la dernière ville recherchée pour la récupérer à la prochaine ouverture de l'appli
+- ❌ Reset complet de l'application (affichage des infos et mémoire) lors du clic sur le titre
 - 📋 Liste de suggestion de villes par rapport à la saisie dans la barre de recherche avec recherche lors de la sélection de l'une d'elles
 - 🌡️ Affichage des conditions météo actuelles : température, température ressentie, humidité, vitesse du vent, probabilité de précipitations, pression et indice UV
 - ⌚ Prévisions sur 24h avec météo, températures et probabilité de précipitations
