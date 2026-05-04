@@ -1,5 +1,8 @@
 .searchBar {
   width: 100%;
+  position: sticky;
+  top: 15px;
+  z-index: 1000;
 }
 
 .inputContainer {
@@ -14,7 +17,7 @@
 .input {
   width: 100%;
   padding: 14px 18px;
-  background: var(--bg-card);
+  background: rgba(22, 33, 62, 0.8);
   backdrop-filter: blur(5px);
   border: 1px solid transparent;
   border-radius: var(--border-radius);
@@ -22,6 +25,7 @@
   font-size: 1rem;
   outline: none;
   transition: box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .input::placeholder {

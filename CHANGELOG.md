@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.10.2] - 2026-05-04
+### Modifié
+- Modification sur la barre de recherche :
+    - Positionnement sticky afin de la garder affichée à l'écran lors du scroll
+    - Augmentation de l'opacité de la barre pour sa visibilité lors du passage au dessus des autres éléments de l'appli
+
 ## [v1.10.1] - 2026-05-04
 ### Modifié
 - Modifications visuelles sur la barre de recherche :

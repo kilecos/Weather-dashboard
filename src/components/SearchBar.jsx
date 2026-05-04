@@ -124,6 +124,7 @@ function SearchBar({onSearch, villeRecherchee}) {
                 )}
                 {/* Le bouton de recherche qui va lancer la fonction handleSubmit sur l'évènement onClick */}
                 <button onClick={handleSubmit} className={styles.button}>
+                    {/* Le dessin d'une loupe à l'intérieur du bouton */}
                     <svg viewBox='0 0 24 24'>
                         <circle cx={11} cy={11} r={8} />
                         <line x1={17} y1={17} x2={23} y2={23} />
