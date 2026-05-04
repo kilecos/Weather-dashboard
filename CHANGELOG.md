@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [v1.10.3] - 2026-05-04
+### Modifié
+- Modification visuelles du bouton de recherche sur mobile :
+    - Retrait de la couleur de background pour moins de surcharge visuelle
+    - Retrait des effets hover et active
+    - Changement de la couleur de la loupe
+- Modification du padding de la barre de recherche pour qu'un long texte ne passe pas en dessous du bouton
+
 ## [v1.10.2] - 2026-05-04
 ### Modifié
 - Modification sur la barre de recherche :
