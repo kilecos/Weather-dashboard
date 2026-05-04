@@ -2,13 +2,13 @@
 
 ## [v1.10.4] - 2026-05-04
 ### Modifié
-- Modifications sur la liste de suggestion en format mobile :
-    - Affichage nom de ville et détail en colonne pour corriger des affichages chargés visuellement
-    - Retrait des effets hover pour éviter la surcharge avec les effets natifs sur navigateur mobile
+- Modifications sur la liste de suggestions en format mobile :
+    - Affichage nom de ville et détails en colonne pour une meilleure présentation et lisibilité
+    - Retrait des effets hover pour éviter la surcharge visuelle avec les effets natifs sur navigateur mobile
 
 ## [v1.10.3] - 2026-05-04
 ### Modifié
-- Modification visuelles du bouton de recherche sur mobile :
+- Modifications visuelles du bouton de recherche sur mobile :
     - Retrait de la couleur de background pour moins de surcharge visuelle
     - Retrait des effets hover et active
     - Changement de la couleur de la loupe
@@ -16,7 +16,7 @@
 
 ## [v1.10.2] - 2026-05-04
 ### Modifié
-- Modification sur la barre de recherche :
+- Modifications sur la barre de recherche :
     - Positionnement sticky afin de la garder affichée à l'écran lors du scroll
     - Augmentation de l'opacité de la barre pour sa visibilité lors du passage au dessus des autres éléments de l'appli
 
