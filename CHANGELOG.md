@@ -1,12 +1,19 @@
 # CHANGELOG
 
-## [v1.10.0] -2026-04-28
+## [v1.10.1] - 2026-05-04
+### Modifié
+- Modifications visuelles sur la barre de recherche :
+    - Déplacement du bouton à l'intérieur de la barre de recherche
+    - Remplacement du mot "Rechercher" par une image SVG d'une loupe
+    - Ajout d'un effet lors du clic sur le bouton
+
+## [v1.10.0] - 2026-04-28
 ### Ajouté
 - Ajout d'un mode nuit dynamique basé sur les heures de lever/coucher du soleil :
     - Ajustement de l'image de fond en fonction de s'il fait nuit ou non
     - Ajustement des emoji dans la carte des informations immédiates et dans les prévisions par heure
 
-## [v1.9.2] -2026-04-28
+## [v1.9.2] - 2026-04-28
 ### Corrigé
 - Correction de l'affichage de la direction du vent afin d'afficher correction la direction dans laquelle va le vent et non d'ou il provient
 
