@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.10.4] - 2026-05-04
+### Modifié
+- Modifications sur la liste de suggestion en format mobile :
+    - Affichage nom de ville et détail en colonne pour corriger des affichages chargés visuellement
+    - Retrait des effets hover pour éviter la surcharge avec les effets natifs sur navigateur mobile
+
 ## [v1.10.3] - 2026-05-04
 ### Modifié
 - Modification visuelles du bouton de recherche sur mobile :

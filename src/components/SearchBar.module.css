@@ -69,6 +69,10 @@
   padding: 10px;
 }
 
+.suggestion:last-child {
+  border-bottom: none;
+}
+
 .suggestion .villeDetails {
   transition: color 0.2s ease;
 }
@@ -145,5 +149,16 @@
 
   .button:active {
     box-shadow: none;
+  }
+
+  .suggestion {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .suggestion:hover, .suggestion:hover .villeDetails {
+    background-color: transparent;
+    color: var(--bg-secondary);
+    border-radius: 0;
   }
 }
