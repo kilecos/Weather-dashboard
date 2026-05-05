@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.11.1] - 2026-05-05
+### Corrigé
+- Correction du rendu visuel après disparition du Header sur mobile
+
 ## [v1.11.0] - 2026-05-05
 ### Ajouté
 - Ajout d'une animation de "disparition" du Header basée sur le scroll par l'utilisateur
