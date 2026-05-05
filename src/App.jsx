@@ -102,7 +102,6 @@ function App() {
         {/* Voir Header.jsx */}
         <Header onReset={resetApp}
           title="Météo en Direct"
-          subtitle="Entrez une ville pour consulter la météo"
         />
         <main className={styles.mainContent}>
           {/* Voir SearchBar.jsx */}

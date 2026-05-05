@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import styles from './Header.module.css'
 
 // Création du composant Header pour afficher le titre et la description de l'application 
-function Header({title, subtitle, onReset}) {
+function Header({title, onReset}) {
     const [isScrolled, setIsScrolled] = useState(false)
     // On stocke la hauteur du header afin de calculer précisement sa remontée au scroll
     const [headerHeight, setHeaderHeight] = useState(0)
@@ -37,7 +37,6 @@ function Header({title, subtitle, onReset}) {
                    Et on fait remonter le reste du contenu de façon fluide */
                 marginTop : isScrolled ? `-${headerHeight}px` : '0'}}>
             <h1 className={styles.title}>🌤 {title}</h1>
-            <p className={styles.subtitle}>{subtitle}</p>
         </header>
     )
 }

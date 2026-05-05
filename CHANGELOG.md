@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.11.3] - 2026-05-05
+### Modifié
+- Retrait du sous-titre du header
+- Modification rendu visuel lors du survol des suggestions de la liste :
+    - Retrait des border-radius pour les suggestions sauf sur la derrière dans la liste pour garder la cohérence avec l'aspect de la liste elle-même
+
 ## [v1.11.2] - 2026-05-05
 ### Modifié
 - Modification du délai avant affichage de la liste de suggestions de la barre de recherche pour plus de fluidité
