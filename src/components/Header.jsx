@@ -10,7 +10,7 @@ function Header({title, onReset}) {
 
     useEffect(() => {
         // On mesure la hauteur réelle du composant
-        // Le "-80" agit comme un offset de sécurité (il correspond aux padding) pour que la transition soit plus fluide
+        // Le "-80" agit comme un offset de sécurité (il correspond aux padding + le gap de 20px) pour que la transition soit plus fluide
         if (headerRef.current) {
             setHeaderHeight(headerRef.current.offsetHeight - 80)
         }

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.11.4] - 2026-05-05
+### Modifié
+- Modification du padding du Header pour le réduire suite au retrait du sous-titre
+
 ## [v1.11.3] - 2026-05-05
 ### Modifié
 - Retrait du sous-titre du header
