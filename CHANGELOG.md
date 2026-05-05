@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.11.2] - 2026-05-05
+### Modifié
+- Modification du délai avant affichage de la liste de suggestions de la barre de recherche pour plus de fluidité
+
 ## [v1.11.1] - 2026-05-05
 ### Corrigé
 - Correction du rendu visuel après disparition du Header sur mobile

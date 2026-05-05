@@ -30,13 +30,13 @@ function SearchBar({onSearch, villeRecherchee}) {
             setVilleSuggest([])
             return
         }
-        // On lance un timer de 300ms pour mettre un léger délai avant l'affichage des suggestions
+        // On lance un timer de 100ms pour mettre un léger délai avant l'affichage des suggestions
         const timer = setTimeout(async () => {
             // On attend le tableau de réponses de l'API
             const suggestions = await getCitySuggestions(ville)
             // On met à jour le state avec ce tableau
             setVilleSuggest(suggestions)
-        }, 300)
+        }, 100)
         // On lance une fonction de nettoyage pour n'avoir qu'un seul appel API à la fois
         return () => {
             clearTimeout(timer)
