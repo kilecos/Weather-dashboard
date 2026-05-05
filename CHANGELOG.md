@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.10.5] - 2026-05-05
+### Modifié
+- Modifications visuelles sur la barre de recherche et liste de suggestions sur mobile :
+    - Reduction de l'opacité du bouton lors du touché
+    - Ajout d'un effet visuel sur les éléments de la liste lors de la sélection
+
 ## [v1.10.4] - 2026-05-04
 ### Modifié
 - Modifications sur la liste de suggestions en format mobile :

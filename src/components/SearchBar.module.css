@@ -149,6 +149,7 @@
 
   .button:active {
     box-shadow: none;
+    opacity: 0.7;
   }
 
   .suggestion {
@@ -160,5 +161,10 @@
     background-color: transparent;
     color: var(--bg-secondary);
     border-radius: 0;
+  }
+
+  .suggestion:active, .suggestion:active .villeDetails {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
   }
 }
