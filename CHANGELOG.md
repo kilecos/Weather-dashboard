@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.11.0] - 2026-05-05
+### Ajouté
+- Ajout d'une animation de "disparition" du Header basée sur le scroll par l'utilisateur
+
 ## [v1.10.5] - 2026-05-05
 ### Modifié
 - Modifications visuelles sur la barre de recherche et liste de suggestions sur mobile :
