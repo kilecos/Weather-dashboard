@@ -5,6 +5,8 @@ import styles from './SearchBar.module.css'
 // Création du composant SearchBar qui va afficher la barre de recherche pour taper le nom d'une ville
 function SearchBar({onSearch, villeRecherchee}) {
     const [ville, setVille] = useState("")
+    // Etat du visuel de chargement de la liste de suggestions
+    const [isLoadingSuggestion, setIsLoadingSuggestion] = useState(false)
     // Etat du tableau des suggestions de villes
     const [villeSuggest, setVilleSuggest] = useState([])
     // Etat pour gérer l'affichage dynamique (classe CSS et placeholder) en cas d'erreur (recherche à vide)
@@ -30,11 +32,14 @@ function SearchBar({onSearch, villeRecherchee}) {
             setVilleSuggest([])
             return
         }
+        // On active un visuel de chargement en attendant la réponse de l'API
+        setIsLoadingSuggestion(true)
         // On lance un timer de 300ms pour mettre un léger délai avant l'affichage des suggestions
         const timer = setTimeout(async () => {
             // On attend le tableau de réponses de l'API
             const suggestions = await getCitySuggestions(ville)
             // On met à jour le state avec ce tableau
+            setIsLoadingSuggestion(false)
             setVilleSuggest(suggestions)
         }, 300)
         // On lance une fonction de nettoyage pour n'avoir qu'un seul appel API à la fois
@@ -111,6 +116,16 @@ function SearchBar({onSearch, villeRecherchee}) {
                     // Application conditionnelle de la classe CSS si erreur dans la recherche
                     className={`${styles.input} ${isError ? styles.inputError : ''}`}
                 />
+                {/* Visuel de chargement de la liste de suggestions en attendant la réponse de l'API */}
+                {ville.length >= 3 && isLoadingSuggestion && (
+					<div className={`${styles.suggestList} ${styles.loadList}`}>
+						<span className={`${styles.loadLine} ${styles.line1}`}></span>
+                        <span className={`${styles.loadLine} ${styles.line2}`}></span>
+                        <span className={`${styles.loadLine} ${styles.line3}`}></span>
+                        <span className={`${styles.loadLine} ${styles.line4}`}></span>
+                        <span className={`${styles.loadLine} ${styles.line5}`}></span>
+				</div>
+                )}
                 {/* La liste de suggestions de ville qui s'affiche lors de la saisie d'au moins 3 lettres dans l'input
                     avec possibilité de cliqué sur chaque éléments de cette liste pour lancer une recherche */}
                 {villeSuggest.length > 0 && (

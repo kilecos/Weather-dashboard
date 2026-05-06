@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.12.0] - 2026-05-06
+### Ajouté
+- Ajout d'un visuel de chargement animé pour la liste de suggestion en attendant la réponse de l'API
+
 ## [v1.11.5] - 2026-05-06
 ### Corrigé
 - Correction de la fonction pour fermer la liste de suggestions en cliquant en dehors de celle-ci
