@@ -1,5 +1,4 @@
 import styles from './SunTime.module.css'
-import {getMeteo} from '../services/weatherService'
 
 // On passe forecast (qui contient les données daily) en prop
 function SunTime({forecast, meteo}) {

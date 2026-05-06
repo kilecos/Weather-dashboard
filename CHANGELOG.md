@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [v1.11.5] - 2026-05-06
+### Corrigé
+- Correction de la fonction pour fermer la liste de suggestions en cliquant en dehors de celle-ci
+- Retrait d'un import non utilisé dans SunTime.jsx
+- Correction d'un background manquant dans le cas par defaut de getWeatherInfo pour les codes météo inconnus
+- Sécurisation de l'affichage de l'image de fond dans App.jsx pour éviter un src invalide
+- Retour au délai initial avant affichage de la liste de suggestions
+- Vidage explicite de la liste de suggestions lors de la soumission d'une ville à la recherche
+
 ## [v1.11.4] - 2026-05-05
 ### Modifié
 - Modification du padding du Header pour le réduire suite au retrait du sous-titre

@@ -30,13 +30,13 @@ function SearchBar({onSearch, villeRecherchee}) {
             setVilleSuggest([])
             return
         }
-        // On lance un timer de 100ms pour mettre un léger délai avant l'affichage des suggestions
+        // On lance un timer de 300ms pour mettre un léger délai avant l'affichage des suggestions
         const timer = setTimeout(async () => {
             // On attend le tableau de réponses de l'API
             const suggestions = await getCitySuggestions(ville)
             // On met à jour le state avec ce tableau
             setVilleSuggest(suggestions)
-        }, 100)
+        }, 300)
         // On lance une fonction de nettoyage pour n'avoir qu'un seul appel API à la fois
         return () => {
             clearTimeout(timer)
@@ -51,6 +51,7 @@ function SearchBar({onSearch, villeRecherchee}) {
             return
         }
         setIsError(false)
+        setVilleSuggest([])
         onSearch(ville)
         // On force la perte de focus sur l'input, cela va replier le clavier sur mobile automatiquement après validation
         inputRef.current.blur()
@@ -84,7 +85,7 @@ function SearchBar({onSearch, villeRecherchee}) {
     useEffect(() => {
         function handleClickOutside(e) {
             // Si la Ref existe et que l'élément cliqué n'est pas dans le bloc searchbar
-            if (searchRef.current && !searchRef.current.contains(event.target)) {
+            if (searchRef.current && !searchRef.current.contains(e.target)) {
                 setVilleSuggest([])
             }
         }

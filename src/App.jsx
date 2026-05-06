@@ -90,13 +90,15 @@ function App() {
     localStorage.removeItem("derniereVille")
   }
 
+  const weatherInfo = getWeatherInfo(meteo?.weathercode, meteo?.is_day).background
+
   return (
     // Le conteneur principal change d'image de fond dynamiquement en fontion de la météo. Si aucune météo, pas de background
     // On affiche ensuite les différents composants de l'application en le passant en prop les state établis en amont (meteo, localisation, forecast,...)
     <div className={styles.appContainer}>
       {/* On affiche une image de fond qui change en fonction de la météo */}
-      {meteo && (
-        <img src={getWeatherInfo(meteo?.weathercode, meteo.is_day).background} className={styles.backgroundLayer} alt="" />
+      {meteo && weatherInfo && (
+        <img src={weatherInfo} className={styles.backgroundLayer} alt="" />
       )}
       <div className={styles.app}>
         {/* Voir Header.jsx */}
