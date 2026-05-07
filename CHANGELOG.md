@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## [v1.12.1] - 2026-05-06
+## [v1.13.0] - 2026-05-07
+### Ajouté
+- Ajout d'une fonctionnalité de vidage de l'input sur mobile par le biais d'un bouton qui apparait dès le premier caractère saisie
+
+## [v1.12.1] - 2026-05-07
 ### Modifié
 - Remise de l'état du state du visuel a false lorsqu'il y a moins de 3 caractères saisies
 - Modification du type d'animation du visuel de chargement

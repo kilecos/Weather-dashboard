@@ -178,10 +178,14 @@
   box-shadow: inset 0 0 5px var(--bg-secondary);
 }
 
+.resetBtn {
+  display: none;
+}
+
 @media (max-width: 600px) {
 
   .input {
-    padding-right: 60px;
+    padding-right: 110px;
   }
   
   .button {
@@ -212,5 +216,11 @@
   .suggestion:active, .suggestion:active .villeDetails {
     background-color: var(--bg-secondary);
     color: var(--text-primary);
+  }
+
+  .resetBtn {
+    display: block;
+    right: 50px;
+    border-radius: 0;
   }
 }

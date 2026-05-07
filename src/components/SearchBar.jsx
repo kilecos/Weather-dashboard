@@ -103,6 +103,14 @@ function SearchBar({onSearch, villeRecherchee}) {
         }
     }, [])
 
+    // Fonction de vidage de l'input lors du toucher sur le bouton "X" disponible sur mobile
+    function resetInput() {
+        setVille("")
+        setVilleSuggest([])
+        setIsLoadingSuggestion(false)
+        inputRef.current.focus()
+	}
+
     return (
         <div className={styles.searchBar} ref={searchRef}>
             <div className={styles.inputContainer}>
@@ -139,6 +147,15 @@ function SearchBar({onSearch, villeRecherchee}) {
                         ))}
                     </ul>
                 )}
+                {/* Le bouton de vidage de l'input qui apparait dès le premier caractère saisie et uniquement sur mobile */}
+                {ville.length > 0 && (
+                    <button onClick={resetInput} className={`${styles.button} ${styles.resetBtn}`}>
+                        <svg viewBox='0 0 24 24'>
+                            <line x1={4} y1={4} x2={20} y2={20}/>
+                            <line x1={20} y1={4} x2={4} y2={20}/>
+                        </svg>
+                    </button>
+				)}
                 {/* Le bouton de recherche qui va lancer la fonction handleSubmit sur l'évènement onClick */}
                 <button onClick={handleSubmit} className={styles.button}>
                     {/* Le dessin d'une loupe à l'intérieur du bouton */}
