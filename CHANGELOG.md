@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.13.3] - 2026-05-07
+### Modifié
+- Modifications des boutons de la barre de recherche sur mobile :
+    - Modifications du code CSS définissant la taille des boutons
+    - Ajustements du positionement des boutons
+
 ## [v1.13.2] - 2026-05-07
 ### Modifié
 - Ajustements visuels des boutons de la barre de recherche sur mobile
