@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.13.1] - 2026-05-07
+### Modifié
+- Ajustement visuel des boutons de la barre de recherche sur mobile
+
 ## [v1.13.0] - 2026-05-07
 ### Ajouté
 - Ajout d'une fonctionnalité de vidage de l'input sur mobile par le biais d'un bouton qui apparait dès le premier caractère saisie
