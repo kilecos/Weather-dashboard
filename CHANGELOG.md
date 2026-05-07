@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.13.4] - 2026-05-07
+### Corrigé
+- Correction alignement vertical du bouton pour vider la barre de recherche sur mobile
+
 ## [v1.13.3] - 2026-05-07
 ### Modifié
 - Modifications des boutons de la barre de recherche sur mobile :
