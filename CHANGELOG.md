@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.13.5] - 2026-05-07
+### Modifié
+- Ajout d'un focus sur l'input de la barre de recherche lors de la soumission d'un input vide
+
 ## [v1.13.4] - 2026-05-07
 ### Corrigé
 - Correction alignement vertical du bouton pour vider la barre de recherche sur mobile

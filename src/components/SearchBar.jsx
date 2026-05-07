@@ -54,6 +54,7 @@ function SearchBar({onSearch, villeRecherchee}) {
         // Empêche les recherches vides ou composées uniquement d'espaces vides
         if (ville.trim() === "") {
             setIsError(true)
+            inputRef.current.focus()
             return
         }
         setIsError(false)
