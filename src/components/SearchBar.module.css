@@ -189,15 +189,26 @@
   }
   
   .button {
-    padding-left: 0;
+    padding-left: 10px;
     background: transparent;
     color: var(--text-secondary);
   }
 
-  .button svg {
+  .button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 1px;
+    background-color: var(--text-secondary);
+  }
+
+  /* .button svg {
     padding-left: 10px;
     border-left: 1px solid var(--text-secondary);
-  }
+  } */
 
   .button:hover {
     background: transparent;
@@ -226,12 +237,16 @@
 
   .resetBtn {
     display: block;
-    right: 60px;
-    padding: 0;
+    right: 53px;
+    padding: 0 0 0 10px;
     border-radius: 0;
   }
 
+  .resetBtn::before {
+    display: none;
+  }
+
   .resetBtn svg {
-    border: none;
+    padding-right: 10px;
   }
 }

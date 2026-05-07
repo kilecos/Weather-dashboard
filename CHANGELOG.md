@@ -1,8 +1,12 @@
 # CHANGELOG
 
+## [v1.13.2] - 2026-05-07
+### Modifié
+- Ajustements visuels des boutons de la barre de recherche sur mobile
+
 ## [v1.13.1] - 2026-05-07
 ### Modifié
-- Ajustement visuel des boutons de la barre de recherche sur mobile
+- Ajustements visuels des boutons de la barre de recherche sur mobile
 
 ## [v1.13.0] - 2026-05-07
 ### Ajouté
