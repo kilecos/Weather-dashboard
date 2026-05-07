@@ -2,7 +2,7 @@
 
 ## [v1.13.6] - 2026-05-07
 ### Modifié
-- Modication du breakpoint @media pour la barre de recherche. Passage à max-width: 1280px afin de prendre en compte également les tablettes (en mode portrait et paysage) et les Laptop avec écran tactile
+- Modification du breakpoint @media pour la barre de recherche. Passage à max-width: 1280px afin de prendre en compte également les tablettes (en mode portrait et paysage) et les Laptop avec écran tactile
 
 ## [v1.13.5] - 2026-05-07
 ### Modifié
