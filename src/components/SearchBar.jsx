@@ -29,6 +29,7 @@ function SearchBar({onSearch, villeRecherchee}) {
     useEffect(() => {
         // Si moins de 3 caractères sont tapés, on vide les suggestions et on s'arrête
         if (ville.length < 3) {
+            setIsLoadingSuggestion(false)
             setVilleSuggest([])
             return
         }
@@ -124,7 +125,7 @@ function SearchBar({onSearch, villeRecherchee}) {
                         <span className={`${styles.loadLine} ${styles.line3}`}></span>
                         <span className={`${styles.loadLine} ${styles.line4}`}></span>
                         <span className={`${styles.loadLine} ${styles.line5}`}></span>
-				</div>
+				    </div>
                 )}
                 {/* La liste de suggestions de ville qui s'affiche lors de la saisie d'au moins 3 lettres dans l'input
                     avec possibilité de cliqué sur chaque éléments de cette liste pour lancer une recherche */}

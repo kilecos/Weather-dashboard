@@ -98,10 +98,10 @@
 
 @keyframes loading {
   0%, 100% {
-    transform: scale(1);
+    transform: scaleY(1);
   }
   50% {
-    transform: scale(1.5);
+    transform: scaleY(1.5);
     background-color: var(--accent);
   }
 }

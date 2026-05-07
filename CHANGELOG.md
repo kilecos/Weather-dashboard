@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## [v1.12.1] - 2026-05-06
+### Modifié
+- Remise de l'état du state du visuel a false lorsqu'il y a moins de 3 caractères saisies
+- Modification du type d'animation du visuel de chargement
+
 ## [v1.12.0] - 2026-05-06
 ### Ajouté
 - Ajout d'un visuel de chargement animé pour la liste de suggestion en attendant la réponse de l'API
