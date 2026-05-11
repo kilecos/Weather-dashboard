@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.13.8] - 2026-05-11
+### Modifié
+- Ajout de (max-width: 1280px) a @media (hover: none) and (pointer: coarse) comme filet de sécurité pour la compatibilité mobile
+
 ## [v1.13.7] - 2026-05-11
 ### Modifié
 - Remplacement du breakpoint @media (max-width: 1280px) par @media (hover: none) and (pointer: coarse) pour cibler précisément les écrans tactiles indépendamment de leur taille

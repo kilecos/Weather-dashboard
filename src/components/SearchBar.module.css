@@ -182,7 +182,7 @@
   display: none;
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media (max-width: 1280px), (hover: none) and (pointer: coarse) {
 
   .input {
     padding-right: 85px;
