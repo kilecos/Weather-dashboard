@@ -182,7 +182,7 @@
   display: none;
 }
 
-@media (max-width: 1280px) {
+@media (hover: none) and (pointer: coarse) {
 
   .input {
     padding-right: 85px;
@@ -216,11 +216,6 @@
     opacity: 0.7;
   }
 
-  .suggestion {
-    display: flex;
-    flex-direction: column;
-  }
-
   .suggestion:hover, .suggestion:hover .villeDetails {
     background-color: transparent;
     color: var(--bg-secondary);
@@ -248,4 +243,13 @@
     width: 15px;
     height: 15px;
   }
+}
+
+@media (max-width: 600px) {
+
+  .suggestion {
+    display: flex;
+    flex-direction: column;
+  }
+
 }

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [v1.13.7] - 2026-05-11
+### Modifié
+- Remplacement du breakpoint @media (max-width: 1280px) par @media (hover: none) and (pointer: coarse) pour cibler précisément les écrans tactiles indépendamment de leur taille
+- Séparation des responsabilité CSS :
+    - Intéractions tactiles dans (hover: none) and (pointer: coarse)
+    - Mise en page dans (max-width: 600px)
+
 ## [v1.13.6] - 2026-05-07
 ### Modifié
 - Modification du breakpoint @media pour la barre de recherche. Passage à max-width: 1280px afin de prendre en compte également les tablettes (en mode portrait et paysage) et les Laptop avec écran tactile
