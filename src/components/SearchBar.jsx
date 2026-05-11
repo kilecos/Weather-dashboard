@@ -112,6 +112,7 @@ function SearchBar({onSearch, villeRecherchee}) {
         inputRef.current.focus()
 	}
 
+    // Fonction afin que, sur mobile, lors du focus de l'input celui-ci se place en haut de l'écran si ce n'est pas déjà le cas
     function handleFocus() {
         if (window.innerWidth <= 600) {
             searchRef.current.scrollIntoView()
