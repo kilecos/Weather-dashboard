@@ -116,7 +116,7 @@ function SearchBar({onSearch, villeRecherchee}) {
     function handleFocus() {
         // Si l'on est sur téléphone, on scroll automatiquement pour placer l'input en haut de l'écran pour gagner de la place pour afficher la liste de suggestions
         if (window.innerWidth <= 600) {
-            searchRef.current.scrollIntoView()
+            searchRef.current.scrollIntoView({block: 'start'})
         }
         // S'il y a déjà des caractères de saisis et que la liste de suggestions n'est pas visible, on la ré-affiche
         if (ville.length >= 3 && villeSuggest.length <= 0) {

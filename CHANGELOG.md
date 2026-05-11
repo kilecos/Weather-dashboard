@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.14.3] - 2026-05-11
+### Modifié
+- Ajout de {block: 'start'} en option à scrollIntoView() sur searchRef afin de bien spécifier la position de l'élément
+
 ## [v1.14.2] - 2026-05-11
 ### Modifié
 - Ajout à la fonction handleFocus() la fonctionnalité de ré-affichage de la liste de suggestion s'il y a des caractières saisis dans l'input et si elle avait été fermée par clic en dehors de l'input
