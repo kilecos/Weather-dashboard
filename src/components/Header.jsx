@@ -29,13 +29,13 @@ function Header({title, onReset}) {
     return (
         <header
             ref={headerRef}
-            className={`${styles.header} ${isScrolled ? styles.hidden : ''}`} 
+            className={`${styles.header} ${isScrolled && window.innerWidth > 600 ? styles.hidden : ''}`} 
             onClick={handleReset} 
             style={{ 
                 /* On applique une marge négative dynamique par rapport à la hauteur du composant 
                    On réduit ainsi l'espace réel occupé par le header dans le flux du document
                    Et on fait remonter le reste du contenu de façon fluide */
-                marginTop : isScrolled ? `-${headerHeight}px` : '0'}}>
+                marginTop : isScrolled && window.innerWidth > 600 ? `-${headerHeight}px` : '0'}}>
             <h1 className={styles.title}>🌤 {title}</h1>
         </header>
     )

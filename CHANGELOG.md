@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.14.1] - 2026-05-11
+## Modifié
+- Limitation de l'animation du header lors du scroll afin d'exclure les formats mobiles
+
 ## [v1.14.0] - 2026-05-11
 ## Ajouté
 - Ajout du scroll automatique lors du focus de la barre de recherche pour la placer en haut de l'écran sur mobile
