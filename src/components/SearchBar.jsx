@@ -112,6 +112,12 @@ function SearchBar({onSearch, villeRecherchee}) {
         inputRef.current.focus()
 	}
 
+    function handleFocus() {
+        if (window.innerWidth <= 600) {
+            searchRef.current.scrollIntoView()
+        }
+    }
+
     return (
         <div className={styles.searchBar} ref={searchRef}>
             <div className={styles.inputContainer}>
@@ -123,6 +129,7 @@ function SearchBar({onSearch, villeRecherchee}) {
                     placeholder={isError ? "Veuillez entrer une ville" : "Rechercher une ville..."}
                     value={ville}
                     onChange={handleChange}
+                    onFocus={handleFocus}
                     // Application conditionnelle de la classe CSS si erreur dans la recherche
                     className={`${styles.input} ${isError ? styles.inputError : ''}`}
                 />

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.14.0] - 2026-05-11
+## Ajouté
+- Ajout du scroll automatique lors du focus de la barre de recherche pour la placer en haut de l'écran sur mobile
+
 ## [v1.13.8] - 2026-05-11
 ### Modifié
 - Ajout de (max-width: 1280px) a @media (hover: none) and (pointer: coarse) comme filet de sécurité pour la compatibilité mobile
