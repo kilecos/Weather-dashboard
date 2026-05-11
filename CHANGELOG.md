@@ -1,7 +1,11 @@
 # CHANGELOG
 
+## [v1.14.2] - 2026-05-11
+### Modifié
+- Ajout à la fonction handleFocus() la fonctionnalité de ré-affichage de la liste de suggestion s'il y a des caractières saisis dans l'input et si elle avait été fermée par clic en dehors de l'input
+
 ## [v1.14.1] - 2026-05-11
-## Modifié
+### Modifié
 - Limitation de l'animation du header lors du scroll afin d'exclure les formats mobiles
 
 ## [v1.14.0] - 2026-05-11

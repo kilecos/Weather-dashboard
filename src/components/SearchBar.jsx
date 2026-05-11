@@ -117,6 +117,18 @@ function SearchBar({onSearch, villeRecherchee}) {
         if (window.innerWidth <= 600) {
             searchRef.current.scrollIntoView()
         }
+        if (ville.length >= 3 && villeSuggest.length <= 0) {
+            const timer = setTimeout(async () => {
+                // On attend le tableau de réponses de l'API
+                const suggestions = await getCitySuggestions(ville)
+                // On met à jour le state avec ce tableau
+                setVilleSuggest(suggestions)
+            }, 100)
+            // On lance une fonction de nettoyage pour n'avoir qu'un seul appel API à la fois
+            return () => {
+                clearTimeout(timer)
+            }
+        }
     }
 
     return (
