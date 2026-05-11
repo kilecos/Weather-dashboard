@@ -112,11 +112,13 @@ function SearchBar({onSearch, villeRecherchee}) {
         inputRef.current.focus()
 	}
 
-    // Fonction afin que, sur mobile, lors du focus de l'input celui-ci se place en haut de l'écran si ce n'est pas déjà le cas
+    // Fonction s'appliquant lors du focus sur l'input
     function handleFocus() {
+        // Si l'on est sur téléphone, on scroll automatiquement pour placer l'input en haut de l'écran pour gagner de la place pour afficher la liste de suggestions
         if (window.innerWidth <= 600) {
             searchRef.current.scrollIntoView()
         }
+        // S'il y a déjà des caractères de saisis et que la liste de suggestions n'est pas visible, on la ré-affiche
         if (ville.length >= 3 && villeSuggest.length <= 0) {
             const timer = setTimeout(async () => {
                 // On attend le tableau de réponses de l'API
