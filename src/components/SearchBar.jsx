@@ -113,23 +113,16 @@ function SearchBar({onSearch, villeRecherchee}) {
 	}
 
     // Fonction s'appliquant lors du focus sur l'input
-    function handleFocus() {
+    async function handleFocus() {
         // Si l'on est sur téléphone, on scroll automatiquement pour placer l'input en haut de l'écran pour gagner de la place pour afficher la liste de suggestions
         if (window.innerWidth <= 600) {
             searchRef.current.scrollIntoView({block: 'start'})
         }
         // S'il y a déjà des caractères de saisis et que la liste de suggestions n'est pas visible, on la ré-affiche
         if (ville.length >= 3 && villeSuggest.length <= 0) {
-            const timer = setTimeout(async () => {
-                // On attend le tableau de réponses de l'API
                 const suggestions = await getCitySuggestions(ville)
                 // On met à jour le state avec ce tableau
                 setVilleSuggest(suggestions)
-            }, 100)
-            // On lance une fonction de nettoyage pour n'avoir qu'un seul appel API à la fois
-            return () => {
-                clearTimeout(timer)
-            }
         }
     }
 

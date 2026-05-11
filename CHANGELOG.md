@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v1.14.4] - 2026-05-11
+### Modifié
+- Modifications sur la fonction handleFocus() pour la ré-affichage de la liste de suggestions :
+    - Retrait du return inutile
+    - Retrait du setTimeout et passage de la fonction en async
+
 ## [v1.14.3] - 2026-05-11
 ### Modifié
 - Ajout de {block: 'start'} en option à scrollIntoView() sur searchRef afin de bien spécifier la position de l'élément
