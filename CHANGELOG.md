@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.15.0] - 2026-05-12
+### Modifié
+- Remplacement du GIF de chargement par une animation CSS pour le visuel de chargement lors de l'attente de la réponse de l'API après une recherche de ville
+
 ## [v1.14.8] - 2026-05-12
 ### Modifié
 - Modification sur le blocage du scroll parasite pour qu'il ne soit effectif que si la liste de suggestions est présente

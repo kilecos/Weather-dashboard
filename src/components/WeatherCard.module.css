@@ -12,19 +12,99 @@
   align-items: center;
 }
 
-/* Ce qui s'affiche lors du chargement de l'API */
+/* Le visuel qui s'affiche lors du chargement de l'API */
 .loading {
   margin: 0 auto;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
   color: var(--text-secondary);
   padding: 20px 0;
   font-size: 1rem;
-  width: 80%;
+  width: 200px;
+  height: 200px;
 }
 
-.loading img {
-  border-radius: var(--border-radius);
-  width: 80%;
+.loadingVisuel {
+  position: relative;
+  width: 130px;
+  height: 130px;
+}
+
+.dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  animation: dotAnimation 1.5s linear infinite;
+}
+
+.dot:nth-child(1) {
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  top: 14.64%;
+  left: 85.36%;
+  transform: translate(-50%, -50%);
+  animation-delay: 0.1875s;
+}
+
+.dot:nth-child(3) {
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  animation-delay: 0.375s;
+}
+
+.dot:nth-child(4) {
+  top: 85.36%;
+  left: 85.36%;
+  transform: translate(-50%, -50%);
+  animation-delay: 0.5625s;
+}
+
+.dot:nth-child(5) {
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 0.75s;
+}
+
+.dot:nth-child(6) {
+  top: 85.36%;
+  left: 14.64%;
+  transform: translate(-50%, -50%);
+  animation-delay: 0.9375s;
+}
+
+.dot:nth-child(7) {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  animation-delay: 1.125s;
+}
+
+.dot:nth-child(8) {
+  top: 14.64%;
+  left: 14.64%;
+  transform: translate(-50%, -50%);
+  animation-delay: 1.3125s;
+}
+
+@keyframes dotAnimation {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
 
 .error {
@@ -102,14 +182,6 @@
 @media (max-width: 600px) {
   .card {
     flex-direction: column;
-  }
-
-  .loading {
-    width: 100%;
-  }
-
-  .loading img {
-    width: 80%;
   }
 
   .temperature {

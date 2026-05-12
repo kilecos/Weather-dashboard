@@ -3,12 +3,21 @@ import { getWeatherInfo } from '../utils/weatherUtils'
 
 // Création du composant WeatherCard pour afficher la météo actuelle de la ville renseignée
 function WeatherCard({meteo, localisation, isLoading, erreur, forecast}) {
-    // Le message de chargement qui s'affiche lors de la recherche
+    // Le visuel de chargement qui s'affiche lors de la recherche
     if (isLoading) {
         return (
             <div className={styles.loading}>
-                <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW5kbTc2aTYweHVtOXl6NmhicjF3eWRwempxbWcwZzY4Ym5xNmV3OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QRhtqYeEywJI4/giphy.gif" alt="GIF de chargement météo"/>
-                <p>Chargement en cours...</p>
+                <div className={styles.loadingVisuel}>
+                    <div className={styles.dot}></div>
+                    <div className={styles.dot}></div>
+                    <div className={styles.dot}></div>
+                    <div className={styles.dot}></div>
+                    <div className={styles.dot}></div>
+                    <div className={styles.dot}></div>
+                    <div className={styles.dot}></div>
+                    <div className={styles.dot}></div>
+                </div>
+                <p>Recherche des prévisions...</p>
             </div>    
         )
     }
