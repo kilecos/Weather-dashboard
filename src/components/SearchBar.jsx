@@ -129,13 +129,19 @@ function SearchBar({onSearch, villeRecherchee}) {
         }
     }
 
+    // Blocage du scroll de l'application en arrière plan au touché de la barre de recherche et de la liste de suggestions lorsque celle-ci est présente
     useEffect(() => {
         const el = searchRef.current
-        if (el) {
+        // Si el n'est pas null ET que la liste de suggestions est présente
+        if (el && villeSuggest.length > 0) {
+            // On désactive le scroll a partir de la SearchBar
             const touchScroll = (e) => {
                 e.preventDefault()
             }
+            // On attache manuellement l'évènement
+            // {passive: false} en obligatoire pour que e.preventDefault() fonctionne
             el.addEventListener('touchmove', touchScroll, {passive:false})
+            // On retire l'évènement si le composant est retiré ou mis à jour
             return () => el.removeEventListener('touchmove', touchScroll)
         }
     },[villeSuggest])
