@@ -129,6 +129,17 @@ function SearchBar({onSearch, villeRecherchee}) {
         }
     }
 
+    useEffect(() => {
+        const el = searchRef.current
+        if (el) {
+            const touchScroll = (e) => {
+                e.preventDefault()
+            }
+            el.addEventListener('touchmove', touchScroll, {passive:false})
+            return () => el.removeEventListener('touchmove', touchScroll)
+        }
+    },[villeSuggest])
+
     return (
         <div className={styles.searchBar} ref={searchRef}>
             <div className={styles.inputContainer}>

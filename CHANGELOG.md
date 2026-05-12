@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.14.7] - 2026-05-12
+### Corrigé
+- Ajustement correction du scroll parasite de l'application lors du scroll dans la liste de suggestions sur mobile
+
 ## [v1.14.6] - 2026-05-12
 ### Corrigé
 - Correction du scroll parasite de l'application lors du scroll dans la liste de suggestions sur mobile
