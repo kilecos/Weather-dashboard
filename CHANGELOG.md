@@ -1,8 +1,15 @@
 # CHANGELOG
 
+## [v1.15.2] - 2026-05-12
+### Corrigé
+- Correction de la fermeture du visuel de chargement de la liste de suggestion dans handleSubmit et handleSelectSuggestion
+### Modifié
+- Ajout de la donnée admin1 (Etat/Région) dans les données retournées par l'API lors de la recherche d'une ville par la fonction handleSubmit
+- Affichage de la donnée admin1 dans WeatherCard
+
 ## [v1.15.1] - 2026-05-12
 ### Corrigé
-- Correction des fonctions handleSubmit et handelSelectSuggestion en y incluant la fermeture du visuel de chargement de la liste lors de la soumission d'une ville à la recherche
+- Correction des fonctions handleSubmit et handleSelectSuggestion en y incluant la fermeture du visuel de chargement de la liste lors de la soumission d'une ville à la recherche
 
 ## [v1.15.0] - 2026-05-12
 ### Modifié

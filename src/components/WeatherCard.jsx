@@ -42,7 +42,7 @@ function WeatherCard({meteo, localisation, isLoading, erreur, forecast}) {
             <div className={styles.presentation}>
                 <div className={styles.location}>
                     <h2>{localisation.name}</h2>
-                    <span>{localisation.country}</span>
+                    <span>{localisation.admin1 ? `${localisation.admin1}, ` : ""}{localisation.country}</span>
                 </div>
                 <div className={styles.main}>
                     <span className={styles.emoji}>{emoji}</span>

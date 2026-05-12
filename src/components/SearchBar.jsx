@@ -74,10 +74,9 @@ function SearchBar({onSearch, villeRecherchee}) {
 
     // Fonction pour lancer la recherche lors du click sur une ville de la liste de suggestions
     function handleSelectSuggestion(villeSelectionnee) {
-        setVille(`${villeSelectionnee.name}, ${villeSelectionnee.country}`)
+        setIsLoadingSuggestion(false)
         // On envoie l'objet entier au parent App.jsx pour la recherche
         onSearch(villeSelectionnee)
-        setIsLoadingSuggestion(false)
         // On vide le tableau de suggestion
         setVilleSuggest([])
         // On enlève le focus sur l'input

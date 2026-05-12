@@ -28,8 +28,8 @@ export async function getCoordinates(ville) {
         // throw interrompt l'exécution de la fonction et renvoie l'erreur au bloc catch de App.jsx pour afficher le message d'erreur
     }
 
-    const {latitude, longitude, name, country} = data.results[0]
-    return {latitude, longitude, name, country}
+    const {latitude, longitude, name, country, admin1} = data.results[0]
+    return {latitude, longitude, name, country, admin1}
 }
 
 // Etape 2 - Récupérer la météo avec les coordonées
