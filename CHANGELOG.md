@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.15.1] - 2026-05-12
+### Corrigé
+- Correction des fonctions handleSubmit et handelSelectSuggestion en y incluant la fermeture du visuel de chargement de la liste lors de la soumission d'une ville à la recherche
+
 ## [v1.15.0] - 2026-05-12
 ### Modifié
 - Remplacement du GIF de chargement par une animation CSS pour le visuel de chargement lors de l'attente de la réponse de l'API après une recherche de ville

@@ -57,6 +57,7 @@ function SearchBar({onSearch, villeRecherchee}) {
             inputRef.current.focus()
             return
         }
+        setIsLoadingSuggestion(false)
         setIsError(false)
         setVilleSuggest([])
         onSearch(ville)
@@ -76,6 +77,7 @@ function SearchBar({onSearch, villeRecherchee}) {
         setVille(`${villeSelectionnee.name}, ${villeSelectionnee.country}`)
         // On envoie l'objet entier au parent App.jsx pour la recherche
         onSearch(villeSelectionnee)
+        setIsLoadingSuggestion(false)
         // On vide le tableau de suggestion
         setVilleSuggest([])
         // On enlève le focus sur l'input
