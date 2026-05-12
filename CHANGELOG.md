@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.14.5] - 2026-05-12
+### Corrigé
+- Correction du comportement faisant remonter l'application en arrière plan à chaque nouveau focus sur la barre de recherche
+
 ## [v1.14.4] - 2026-05-11
 ### Modifié
 - Modifications sur la fonction handleFocus() pour la ré-affichage de la liste de suggestions :

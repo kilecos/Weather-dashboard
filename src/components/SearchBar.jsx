@@ -114,8 +114,11 @@ function SearchBar({onSearch, villeRecherchee}) {
 
     // Fonction s'appliquant lors du focus sur l'input
     async function handleFocus() {
-        // Si l'on est sur téléphone, on scroll automatiquement pour placer l'input en haut de l'écran pour gagner de la place pour afficher la liste de suggestions
-        if (window.innerWidth <= 600) {
+        // On récupère la position de la barre de recherche dans le viewport
+        const positionActuelle = searchRef.current.getBoundingClientRect()
+        // Si l'on est sur téléphone ET si la barre n'est pas déjà en haut, 
+        // on scroll automatiquement pour placer l'input en haut de l'écran pour gagner de la place pour afficher la liste de suggestions
+        if (window.innerWidth <= 600 && positionActuelle.top > 50) {
             searchRef.current.scrollIntoView({block: 'start'})
         }
         // S'il y a déjà des caractères de saisis et que la liste de suggestions n'est pas visible, on la ré-affiche
