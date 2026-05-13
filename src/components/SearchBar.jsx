@@ -83,6 +83,7 @@ function SearchBar({onSearch, villeRecherchee}) {
         inputRef.current.blur()
     }
 
+    // On vide l'input après la recherche
     useEffect(() => {
         if (!villeRecherchee) {
             setVille("")
@@ -149,59 +150,57 @@ function SearchBar({onSearch, villeRecherchee}) {
 
     return (
         <div className={styles.searchBar} ref={searchRef}>
-            <div className={styles.inputContainer}>
-                {/* L'input dans lequel on entre la ville recherchée et qui va exécuter le fonction keySearch sur l'évènement onKeyDown */}
-                <input onKeyDown={keySearch}
-                    ref = {inputRef} // Liaison de la ref pour manipuler l'input (focus/blur)
-                    type="text"
-                    // Placeholder dynamique si erreur ou non
-                    placeholder={isError ? "Veuillez entrer une ville" : "Rechercher une ville..."}
-                    value={ville}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    // Application conditionnelle de la classe CSS si erreur dans la recherche
-                    className={`${styles.input} ${isError ? styles.inputError : ''}`}
-                />
-                {/* Visuel de chargement de la liste de suggestions en attendant la réponse de l'API */}
-                {ville.length >= 3 && isLoadingSuggestion && (
-					<div className={`${styles.suggestList} ${styles.loadList}`}>
-						<span className={`${styles.loadLine} ${styles.line1}`}></span>
-                        <span className={`${styles.loadLine} ${styles.line2}`}></span>
-                        <span className={`${styles.loadLine} ${styles.line3}`}></span>
-                        <span className={`${styles.loadLine} ${styles.line4}`}></span>
-                        <span className={`${styles.loadLine} ${styles.line5}`}></span>
-				    </div>
-                )}
-                {/* La liste de suggestions de ville qui s'affiche lors de la saisie d'au moins 3 lettres dans l'input
-                    avec possibilité de cliqué sur chaque éléments de cette liste pour lancer une recherche */}
-                {villeSuggest.length > 0 && (
-                    <ul className={styles.suggestList}>
-                        {villeSuggest.map((ville, index) => (
-                            <li key={index} className={styles.suggestion} onClick={() => handleSelectSuggestion(ville)}>
-                                <span className={styles.villeName}>{ville.name}</span>
-                                <span className={styles.villeDetails}>{ville.admin1 ? `${ville.admin1}, ` : ""}{ville.country}</span>
-                            </li>
-                        ))}
-                    </ul>
-                )}
-                {/* Le bouton de vidage de l'input qui apparait dès le premier caractère saisie et uniquement sur mobile */}
-                {ville.length > 0 && (
-                    <button onClick={resetInput} className={`${styles.button} ${styles.resetBtn}`}>
-                        <svg viewBox='0 0 24 24'>
-                            <line x1={4} y1={4} x2={20} y2={20}/>
-                            <line x1={20} y1={4} x2={4} y2={20}/>
-                        </svg>
-                    </button>
-				)}
-                {/* Le bouton de recherche qui va lancer la fonction handleSubmit sur l'évènement onClick */}
-                <button onClick={handleSubmit} className={styles.button}>
-                    {/* Le dessin d'une loupe à l'intérieur du bouton */}
+            {/* L'input dans lequel on entre la ville recherchée et qui va exécuter le fonction keySearch sur l'évènement onKeyDown */}
+            <input onKeyDown={keySearch}
+                ref = {inputRef} // Liaison de la ref pour manipuler l'input (focus/blur)
+                type="text"
+                // Placeholder dynamique si erreur ou non
+                placeholder={isError ? "Veuillez entrer une ville" : "Rechercher une ville..."}
+                value={ville}
+                onChange={handleChange}
+                onFocus={handleFocus}
+                // Application conditionnelle de la classe CSS si erreur dans la recherche
+                className={`${styles.input} ${isError ? styles.inputError : ''}`}
+            />
+            {/* Visuel de chargement de la liste de suggestions en attendant la réponse de l'API */}
+            {ville.length >= 3 && isLoadingSuggestion && (
+                <div className={`${styles.suggestList} ${styles.loadList}`}>
+                    <span className={`${styles.loadLine} ${styles.line1}`}></span>
+                    <span className={`${styles.loadLine} ${styles.line2}`}></span>
+                    <span className={`${styles.loadLine} ${styles.line3}`}></span>
+                    <span className={`${styles.loadLine} ${styles.line4}`}></span>
+                    <span className={`${styles.loadLine} ${styles.line5}`}></span>
+                </div>
+            )}
+            {/* La liste de suggestions de ville qui s'affiche lors de la saisie d'au moins 3 lettres dans l'input
+                avec possibilité de cliqué sur chaque éléments de cette liste pour lancer une recherche */}
+            {villeSuggest.length > 0 && (
+                <ul className={styles.suggestList}>
+                    {villeSuggest.map((ville, index) => (
+                        <li key={index} className={styles.suggestion} onClick={() => handleSelectSuggestion(ville)}>
+                            <span className={styles.villeName}>{ville.name}</span>
+                            <span className={styles.villeDetails}>{ville.admin1 ? `${ville.admin1}, ` : ""}{ville.country}</span>
+                        </li>
+                    ))}
+                </ul>
+            )}
+            {/* Le bouton de vidage de l'input qui apparait dès le premier caractère saisie et uniquement sur mobile */}
+            {ville.length > 0 && (
+                <button onClick={resetInput} className={`${styles.button} ${styles.resetBtn}`}>
                     <svg viewBox='0 0 24 24'>
-                        <circle cx={11} cy={11} r={8} />
-                        <line x1={17} y1={17} x2={23} y2={23} />
+                        <line x1={4} y1={4} x2={20} y2={20}/>
+                        <line x1={20} y1={4} x2={4} y2={20}/>
                     </svg>
                 </button>
-            </div>
+            )}
+            {/* Le bouton de recherche qui va lancer la fonction handleSubmit sur l'évènement onClick */}
+            <button onClick={handleSubmit} className={styles.button}>
+                {/* Le dessin d'une loupe à l'intérieur du bouton */}
+                <svg viewBox='0 0 24 24'>
+                    <circle cx={11} cy={11} r={8} />
+                    <line x1={17} y1={17} x2={23} y2={23} />
+                </svg>
+            </button>
         </div>
     )
 }

@@ -1,16 +1,11 @@
 .searchBar {
   width: 100%;
   position: sticky;
-  top: 15px;
+  top: 20px;
   z-index: 1000;
 }
 
-.inputContainer {
-  position: relative;
-  flex: 1;
-}
-
-.inputContainer:has(.suggestList) .input {
+.searchBar:has(.suggestList) .input {
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
@@ -166,7 +161,7 @@
   stroke-linecap: round;
 }
 
-.inputContainer:has(.suggestList) .button {
+.searchBar:has(.suggestList) .button {
   border-bottom-right-radius: 0;
 }
 
