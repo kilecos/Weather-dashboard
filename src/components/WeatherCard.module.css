@@ -202,6 +202,11 @@
     border-top: 1px solid var(--border);
   }
 
+  .detail:nth-child(3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
   .detailValue {
     font-size: 1rem;
   }

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v1.15.3] - 2026-05-13
+### Modifié
+- Modification CSS pour le rendu visuel des détails dans WeatherCard sur mobile
+
 ## [v1.15.2] - 2026-05-12
 ### Corrigé
 - Correction de la fermeture du visuel de chargement de la liste de suggestion dans handleSubmit et handleSelectSuggestion
