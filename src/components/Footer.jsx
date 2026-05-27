@@ -1,5 +1,5 @@
-import styles from './Footer.module.css'
-import { version } from '../../package.json'
+import styles from './Footer.module.css';
+import { version } from '../../package.json';
 
 // Création du composant Footer comprenant le copyright, un lien vers le projet sur GitHub et l'heure de la mise à jour des infos météo
 function Footer({lastUpdate}) {
@@ -16,7 +16,7 @@ function Footer({lastUpdate}) {
             <p>v.{version}</p>
             </div>
         </footer>
-    )
+    );
 }
 
 export default Footer

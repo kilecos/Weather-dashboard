@@ -1,10 +1,10 @@
-import styles from './Forecast.module.css'
-import { getWeatherInfo } from '../utils/weatherUtils'
+import styles from './Forecast.module.css';
+import { getWeatherInfo } from '../utils/weatherUtils';
 
 // Création du composant Forecast pour afficher les prévisions météo sur 7 jours
 function Forecast({forecast}) {
     // S'il n'y a pas encore de prévisions, rien ne s'affiche
-    if (!forecast) return null
+    if (!forecast) return null;
 
     return (
         <div className={styles.forecast}>
@@ -31,7 +31,7 @@ function Forecast({forecast}) {
                 ))}
             </div>
         </div>
-    )
+    );
 }
 
 export default Forecast

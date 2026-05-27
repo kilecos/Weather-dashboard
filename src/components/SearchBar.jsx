@@ -1,27 +1,27 @@
-import { useEffect, useState, useRef } from 'react'
-import { getCitySuggestions } from '../services/weatherService'
-import styles from './SearchBar.module.css'
+import { useEffect, useState, useRef } from 'react';
+import { getCitySuggestions } from '../services/weatherService';
+import styles from './SearchBar.module.css';
 
 // Création du composant SearchBar qui va afficher la barre de recherche pour taper le nom d'une ville
 function SearchBar({onSearch, villeRecherchee}) {
-    const [ville, setVille] = useState("")
+    const [ville, setVille] = useState("");
     // Etat du visuel de chargement de la liste de suggestions
-    const [isLoadingSuggestion, setIsLoadingSuggestion] = useState(false)
+    const [isLoadingSuggestion, setIsLoadingSuggestion] = useState(false);
     // Etat du tableau des suggestions de villes
-    const [villeSuggest, setVilleSuggest] = useState([])
+    const [villeSuggest, setVilleSuggest] = useState([]);
     // Etat pour gérer l'affichage dynamique (classe CSS et placeholder) en cas d'erreur (recherche à vide)
-    const [isError, setIsError] = useState(false)
+    const [isError, setIsError] = useState(false);
     // Ref pour accéder directement au DOM de l'input
-    const inputRef = useRef(null)
+    const inputRef = useRef(null);
     // Ref pour accéder au block input + liste + bouton
-    const searchRef = useRef(null)
+    const searchRef = useRef(null);
 
     function handleChange(event) {
         // On récupère la valeur de l'input et met à jour le state ville
-        setVille(event.target.value)
+        setVille(event.target.value);
         // Si on était en erreur, on enlève celle-ci dès que l'utilisateur tape une lettre
         if (isError) {
-            setIsError(false)
+            setIsError(false);
         }
     }
 
@@ -29,124 +29,124 @@ function SearchBar({onSearch, villeRecherchee}) {
     useEffect(() => {
         // Si moins de 3 caractères sont tapés, on vide les suggestions et on s'arrête
         if (ville.length < 3) {
-            setIsLoadingSuggestion(false)
-            setVilleSuggest([])
-            return
+            setIsLoadingSuggestion(false);
+            setVilleSuggest([]);
+            return;
         }
         // On active un visuel de chargement en attendant la réponse de l'API
-        setIsLoadingSuggestion(true)
+        setIsLoadingSuggestion(true);
         // On lance un timer de 300ms pour mettre un léger délai avant l'affichage des suggestions
         const timer = setTimeout(async () => {
             // On attend le tableau de réponses de l'API
-            const suggestions = await getCitySuggestions(ville)
+            const suggestions = await getCitySuggestions(ville);
             // On met à jour le state avec ce tableau
-            setIsLoadingSuggestion(false)
-            setVilleSuggest(suggestions)
-        }, 300)
+            setIsLoadingSuggestion(false);
+            setVilleSuggest(suggestions);
+        }, 300);
         // On lance une fonction de nettoyage pour n'avoir qu'un seul appel API à la fois
         return () => {
-            clearTimeout(timer)
+            clearTimeout(timer);
         }
-    }, [ville])
+    }, [ville]);
 
     // La fonction déclencheur qui va envoyer le nom de la ville tapée à l'App qui va faire appel à l'API
     function handleSubmit() {
         // Empêche les recherches vides ou composées uniquement d'espaces vides
         if (ville.trim() === "") {
-            setIsError(true)
-            inputRef.current.focus()
-            return
+            setIsError(true);
+            inputRef.current.focus();
+            return;
         }
-        setIsLoadingSuggestion(false)
-        setIsError(false)
-        setVilleSuggest([])
-        onSearch(ville)
+        setIsLoadingSuggestion(false);
+        setIsError(false);
+        setVilleSuggest([]);
+        onSearch(ville);
         // On force la perte de focus sur l'input, cela va replier le clavier sur mobile automatiquement après validation
-        inputRef.current.blur()
+        inputRef.current.blur();
     }
 
     // Fonction pour lancer la recherche par pression sur la touche Entrée du clavier
     function keySearch(e) {
         if (e.key === "Enter") {
-            handleSubmit()
+            handleSubmit();
         }
     }
 
     // Fonction pour lancer la recherche lors du click sur une ville de la liste de suggestions
     function handleSelectSuggestion(villeSelectionnee) {
-        setIsLoadingSuggestion(false)
+        setIsLoadingSuggestion(false);
         // On envoie l'objet entier au parent App.jsx pour la recherche
-        onSearch(villeSelectionnee)
+        onSearch(villeSelectionnee);
         // On vide le tableau de suggestion
-        setVilleSuggest([])
+        setVilleSuggest([]);
         // On enlève le focus sur l'input
-        inputRef.current.blur()
+        inputRef.current.blur();
     }
 
     // On vide l'input après la recherche
     useEffect(() => {
         if (!villeRecherchee) {
-            setVille("")
+            setVille("");
         }
-    }, [villeRecherchee])
+    }, [villeRecherchee]);
 
     // Fermeture de la liste de suggestions par clic en dehors de celle-ci ou de l'input
     useEffect(() => {
         function handleClickOutside(e) {
             // Si la Ref existe et que l'élément cliqué n'est pas dans le bloc searchbar
             if (searchRef.current && !searchRef.current.contains(e.target)) {
-                setVilleSuggest([])
+                setVilleSuggest([]);
             }
         }
         // On attache l'évènement au document
-        document.addEventListener("mousedown", handleClickOutside)
+        document.addEventListener("mousedown", handleClickOutside);
         // Nettoyage de l'évènement pour éviter les fuites de mémoire
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside)
+            document.removeEventListener("mousedown", handleClickOutside);
         }
-    }, [])
+    }, []);
 
     // Fonction de vidage de l'input lors du toucher sur le bouton "X" disponible sur mobile
     function resetInput() {
-        setVille("")
-        setVilleSuggest([])
-        setIsLoadingSuggestion(false)
-        inputRef.current.focus()
+        setVille("");
+        setVilleSuggest([]);
+        setIsLoadingSuggestion(false);
+        inputRef.current.focus();
 	}
 
     // Fonction s'appliquant lors du focus sur l'input
     async function handleFocus() {
         // On récupère la position de la barre de recherche dans le viewport
-        const positionActuelle = searchRef.current.getBoundingClientRect()
+        const positionActuelle = searchRef.current.getBoundingClientRect();
         // Si l'on est sur téléphone ET si la barre n'est pas déjà en haut, 
         // on scroll automatiquement pour placer l'input en haut de l'écran pour gagner de la place pour afficher la liste de suggestions
         if (window.innerWidth <= 600 && positionActuelle.top > 50) {
-            searchRef.current.scrollIntoView({block: 'start'})
+            searchRef.current.scrollIntoView({block: 'start'});
         }
         // S'il y a déjà des caractères de saisis et que la liste de suggestions n'est pas visible, on la ré-affiche
         if (ville.length >= 3 && villeSuggest.length <= 0) {
-                const suggestions = await getCitySuggestions(ville)
+                const suggestions = await getCitySuggestions(ville);
                 // On met à jour le state avec ce tableau
-                setVilleSuggest(suggestions)
+                setVilleSuggest(suggestions);
         }
     }
 
     // Blocage du scroll de l'application en arrière plan au touché de la barre de recherche et de la liste de suggestions lorsque celle-ci est présente
     useEffect(() => {
-        const el = searchRef.current
+        const el = searchRef.current;
         // Si el n'est pas null ET que la liste de suggestions est présente
         if (el && villeSuggest.length > 0) {
             // On désactive le scroll a partir de la SearchBar
             const touchScroll = (e) => {
-                e.preventDefault()
+                e.preventDefault();
             }
             // On attache manuellement l'évènement
             // {passive: false} en obligatoire pour que e.preventDefault() fonctionne
-            el.addEventListener('touchmove', touchScroll, {passive:false})
+            el.addEventListener('touchmove', touchScroll, {passive:false});
             // On retire l'évènement si le composant est retiré ou mis à jour
-            return () => el.removeEventListener('touchmove', touchScroll)
+            return () => el.removeEventListener('touchmove', touchScroll);
         }
-    },[villeSuggest])
+    },[villeSuggest]);
 
     return (
         <div className={styles.searchBar} ref={searchRef}>
@@ -202,7 +202,7 @@ function SearchBar({onSearch, villeRecherchee}) {
                 </svg>
             </button>
         </div>
-    )
+    );
 }
 
 export default SearchBar

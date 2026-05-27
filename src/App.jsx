@@ -1,96 +1,96 @@
-import { useEffect, useState } from 'react'
-import Header from './components/Header'
-import SearchBar from './components/SearchBar'
-import WeatherCard from './components/WeatherCard'
-import Forecast from './components/Forecast'
-import InfosSupp from './components/InfosSupp'
-import SunTime from './components/SunTime'
-import Footer from './components/Footer'
-import { getCoordinates, getMeteo } from './services/weatherService'
-import styles from './App.module.css'
-import { getWeatherInfo } from './utils/weatherUtils'
-import HourlyForecast from './components/HourlyForecast'
+import { useEffect, useState } from 'react';
+import Header from './components/Header';
+import SearchBar from './components/SearchBar';
+import WeatherCard from './components/WeatherCard';
+import Forecast from './components/Forecast';
+import InfosSupp from './components/InfosSupp';
+import SunTime from './components/SunTime';
+import Footer from './components/Footer';
+import { getCoordinates, getMeteo } from './services/weatherService';
+import styles from './App.module.css';
+import { getWeatherInfo } from './utils/weatherUtils';
+import HourlyForecast from './components/HourlyForecast';
 
 // Création du composant App qui va afficher l'application complète à l'écran
 function App() {
   // --- State de données ---
   const [villeRecherchee, setVilleRecherchee] = useState(() => {
-    const derniereRecherche = localStorage.getItem("derniereVille")  // On recupère la ville sauvegardée
+    const derniereRecherche = localStorage.getItem("derniereVille");  // On recupère la ville sauvegardée
     // Si une ville a déjà été sauvegarder dans localStorage, villeRecherchee correspondra à cette dernière
     // Sinon, on initialise villeRecherchee à null et sera modifié lors de la soumission d'une ville dans la recherche
-    return derniereRecherche ? derniereRecherche : null
-  })
-  const [meteo, setMeteo] = useState(null)                    // Données météo actuelles
-  const [localisation, setLocalisation] = useState(null)      // Infos de géocodage (nom exact, pays)
-  const [forecast, setForecast] = useState(null)              // Prévisions sur 7 jours
-  const [hourlyForecast, setHourlyForecast] = useState(null)  // Prévisions sur 24h
+    return derniereRecherche ? derniereRecherche : null;
+  });
+  const [meteo, setMeteo] = useState(null);                    // Données météo actuelles
+  const [localisation, setLocalisation] = useState(null);      // Infos de géocodage (nom exact, pays)
+  const [forecast, setForecast] = useState(null);              // Prévisions sur 7 jours
+  const [hourlyForecast, setHourlyForecast] = useState(null);  // Prévisions sur 24h
 
   // --- State d'interface (UI) ---
-  const [isLoading, setIsLoading] = useState(false)           // Etat du chargement
-  const [erreur, setErreur] = useState(null)                  // Message d'erreur si la ville est introuvable
-  const [lastUpdate, setLastUpdate] = useState(null)          // Heure de la dernière mise à jour
+  const [isLoading, setIsLoading] = useState(false);           // Etat du chargement
+  const [erreur, setErreur] = useState(null);                  // Message d'erreur si la ville est introuvable
+  const [lastUpdate, setLastUpdate] = useState(null);          // Heure de la dernière mise à jour
 
   function handleSearch(ville) {
-    setVilleRecherchee(ville)
+    setVilleRecherchee(ville);
   }
 
   // Déclenche la récupération des données dès que villeRecherchee change
   useEffect(() => {
-    if (!villeRecherchee) return // On évite de lancer une recherche a vide
+    if (!villeRecherchee) return; // On évite de lancer une recherche a vide
 
     async function fetchData() {
       // Réinitialisation de l'interface avant la nouvelle requête
-      setIsLoading(true) // On afficher le message de chargement pendant la recherche
-      setErreur(null)
-      setMeteo(null)
-      setForecast(null)
-      setHourlyForecast(null)
+      setIsLoading(true); // On afficher le message de chargement pendant la recherche
+      setErreur(null);
+      setMeteo(null);
+      setForecast(null);
+      setHourlyForecast(null);
 
       try {
-        let coords
+        let coords;
         // On récupère les coordonnées de la ville recherchée
         // On vérifie si villeRecherchee est un texte ou un objet
         if (typeof villeRecherchee === "string") {
           // Premier Cas : l'utilisateur a tapé un texte et l'a validé en cliquant sur le bouton ou par la touche Entrée
           // On appelle l'API pour trouver les coordonnées
-          coords = await getCoordinates(villeRecherchee)
+          coords = await getCoordinates(villeRecherchee);
         } else {
           // Deuxième Cas : l'utilisateur a cliqué sur une suggestion de la liste
           // On a déjà tout dans l'objet (latitude, longitude, nom, pays)
-          coords = villeRecherchee
+          coords = villeRecherchee;
         }
         // On récupère les données météo par rapport aux coordonnées
-        const donneesMeteo = await getMeteo(coords.latitude, coords.longitude)
-        setLocalisation(coords)
-        localStorage.setItem("derniereVille", coords.name)  // On sauvegarde la ville recherchée dans localStorage pour la recupérer au prochain chargement de l'appli
-        setMeteo(donneesMeteo.current)
-        setForecast(donneesMeteo.daily)
-        setHourlyForecast(donneesMeteo.hourly)
-        setLastUpdate(new Date())
+        const donneesMeteo = await getMeteo(coords.latitude, coords.longitude);
+        setLocalisation(coords);
+        localStorage.setItem("derniereVille", coords.name);  // On sauvegarde la ville recherchée dans localStorage pour la recupérer au prochain chargement de l'appli
+        setMeteo(donneesMeteo.current);
+        setForecast(donneesMeteo.daily);
+        setHourlyForecast(donneesMeteo.hourly);
+        setLastUpdate(new Date());
       } catch (error) {
-        setErreur(error.message)
+        setErreur(error.message);
       } finally {
-        setIsLoading(false)
-        setVilleRecherchee(null) // On vide la barre de recherche
+        setIsLoading(false);
+        setVilleRecherchee(null); // On vide la barre de recherche
       }
     }
 
     fetchData()
-  }, [villeRecherchee])
+  }, [villeRecherchee]);
 
   function resetApp() {
-    setVilleRecherchee(null)
-    setMeteo(null)
-    setLocalisation(null)
-    setForecast(null)
-    setHourlyForecast(null)
-    setIsLoading(false)
-    setErreur(null)
-    setLastUpdate(null)
-    localStorage.removeItem("derniereVille")
+    setVilleRecherchee(null);
+    setMeteo(null);
+    setLocalisation(null);
+    setForecast(null);
+    setHourlyForecast(null);
+    setIsLoading(false);
+    setErreur(null);
+    setLastUpdate(null);
+    localStorage.removeItem("derniereVille");
   }
 
-  const weatherInfo = getWeatherInfo(meteo?.weathercode, meteo?.is_day).background
+  const weatherInfo = getWeatherInfo(meteo?.weathercode, meteo?.is_day).background;
 
   return (
     // Le conteneur principal change d'image de fond dynamiquement en fontion de la météo. Si aucune météo, pas de background
@@ -143,7 +143,7 @@ function App() {
         />
       </div>
     </div>
-  )
+  );
 }
 
 export default App

@@ -1,8 +1,8 @@
-import styles from './InfosSupp.module.css'
+import styles from './InfosSupp.module.css';
 
 function InfosSupp ({meteo, forecast}) {
     // Si pas de météo ou de prévisions, rien ne s'affiche
-    if (!meteo || !forecast) return null
+    if (!meteo || !forecast) return null;
 
     return (
         <div className={styles.infosContainer}>
@@ -57,7 +57,7 @@ function InfosSupp ({meteo, forecast}) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default InfosSupp

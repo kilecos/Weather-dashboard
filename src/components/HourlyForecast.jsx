@@ -1,80 +1,80 @@
-import { useRef, useEffect } from 'react'
-import styles from './HourlyForecast.module.css'
-import { getWeatherInfo } from '../utils/weatherUtils'
+import { useRef, useEffect } from 'react';
+import styles from './HourlyForecast.module.css';
+import { getWeatherInfo } from '../utils/weatherUtils';
 
 function HourlyForecast({hourlyForecast, meteo, forecast}) {
     // Création d'une référence (Ref) : un "post-it" collé sur l'élément HTML
     // Va permettre de manipuler le défilement sans passer par un state
-    const scrollRef = useRef(null)
+    const scrollRef = useRef(null);
 
     useEffect(() => {
         // el (élément) représente le conteneur HTML réel désigné par Ref
-        const el = scrollRef.current
+        const el = scrollRef.current;
         if (el) {
             
             // La fonction qui intercepte le mouvement de la molette de la souris
             // définie avec const sous la forme d'une arrow function
             const handleWheel = (e) => {
                 // e.deltaY est le mouvement vertical de la molette, si 0 on ne fait rien
-                if (e.deltaY === 0) return
+                if (e.deltaY === 0) return;
                 
                 // On empêche la page de bouger verticalement lors du scroll
-                e.preventDefault() 
+                e.preventDefault();
                 
                 // On converti le mouvement vertical (deltaY) en mouvement horizontal (scrollLeft)
-                el.scrollLeft += e.deltaY
+                el.scrollLeft += e.deltaY;
             }
 
             // On attache manuelle l'évènement
             // {passive: false} en obligatoire pour que e.preventDefault() fonctionne
-            el.addEventListener('wheel', handleWheel, { passive: false })
+            el.addEventListener('wheel', handleWheel, { passive: false });
             
             // On retire l'écouteur d'évènement si le composant est retiré ou mis à jour
-            return () => el.removeEventListener('wheel', handleWheel)
+            return () => el.removeEventListener('wheel', handleWheel);
         }
-    }, [hourlyForecast]) // On relance si les données changent
+    }, [hourlyForecast]); // On relance si les données changent
 
     // Si aucune prévisions, rien ne s'affiche
-    if (!hourlyForecast || !forecast) return null
+    if (!hourlyForecast || !forecast) return null;
 
     // 1. On défini la "prochaine heure pile" basée sur l'heure de la ville cible
     // On crée une date à partir de meteo.time (l'heure locale fournie par l'API)
-    const cityTime = new Date(meteo.time)
-    const nextHour = new Date(cityTime)
+    const cityTime = new Date(meteo.time);
+    const nextHour = new Date(cityTime);
 
     // On passe à l'heure suivante pile
-    nextHour.setHours(nextHour.getHours() +1, 0, 0, 0)
+    nextHour.setHours(nextHour.getHours() +1, 0, 0, 0);
 
     // 2. On cherche l'index de l'heure actuelle dans le tableau time
     // On utilise ensuite new Date(t) pour comparer des objets dates réels
-    const departIndex = hourlyForecast.time.findIndex(t => new Date(t) >= nextHour)
+    const departIndex = hourlyForecast.time.findIndex(t => new Date(t) >= nextHour);
 
     // Si on ne trouve rien, on part de l'index 0, sinon on prend l'index trouvé
-    const debut = departIndex === -1 ? 0 : departIndex
+    const debut = departIndex === -1 ? 0 : departIndex;
 
     // 3. On découpe les tableaux de données pour n'avoir que celles correspondant au 24 prochaines heures
-    const hours24 = hourlyForecast.time.slice(debut, debut + 24)
-    const temps24 = hourlyForecast.temperature_2m.slice(debut, debut + 24)
-    const codes24 = hourlyForecast.weathercode.slice(debut, debut + 24)
-    const precip24 = hourlyForecast.precipitation_probability.slice(debut, debut + 24) 
+    const hours24 = hourlyForecast.time.slice(debut, debut + 24);
+    const temps24 = hourlyForecast.temperature_2m.slice(debut, debut + 24);
+    const codes24 = hourlyForecast.weathercode.slice(debut, debut + 24);
+    const precip24 = hourlyForecast.precipitation_probability.slice(debut, debut + 24);
 
     // Fonction pour savoir s'il fait jour à une heure donnée
     const checkIsDay = (dateCible) => {
         // On extrait uniquement la date pour trouver le bon index dans le tableau daily
-        const dateStr = new Date(dateCible).toISOString().split('T')[0]
+        const dateStr = new Date(dateCible).toISOString().split('T')[0];
         // On cherche à quel jour (index) correspondent ces données dans le tableau forecast (ex : 0 pour aujourd'hui, 1 pour demain)
-        const indexJour = forecast.time.indexOf(dateStr)
+        const indexJour = forecast.time.indexOf(dateStr);
         // Si la date n'est pas trouvée dans les prévisions, on retourne "jour" (1) par défaut
-        if (indexJour === -1) return 1
+        if (indexJour === -1) return 1;
         // On crée des objets Date réels pour le lever et le coucher du soleil de ce jour précis
-        const lever = new Date(forecast.sunrise[indexJour])
-        const coucher = new Date(forecast.sunset[indexJour])
+        const lever = new Date(forecast.sunrise[indexJour]);
+        const coucher = new Date(forecast.sunset[indexJour]);
         // On convertit l'heure en objet Date pour pouvoir faire la comparaison
-        const cible = new Date(dateCible)
+        const cible = new Date(dateCible);
         // Logique de comparaison :
         // Il fait jour (1) SI l'heure cible est comprise entre le lever et le coucher
         // Sinon, il fait nuit (0)
-        return (cible >= lever && cible < coucher) ? 1 : 0
+        return (cible >= lever && cible < coucher) ? 1 : 0;
     }
 
     return (
@@ -97,7 +97,7 @@ function HourlyForecast({hourlyForecast, meteo, forecast}) {
                 ))}
             </div>
         </div>
-    )
+    );
 }
 
 export default HourlyForecast
